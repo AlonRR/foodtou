@@ -1,0 +1,35 @@
+{
+    "restaurant": [
+        {
+            "username": "Giraffe",
+            "password": "theBestCornSoup",
+            "location": "HaBarzel 4, Tel Aviv",
+            "food": []
+        },
+        {
+            "username": "Mina Tomei",
+            "password": "redcurry456",
+            "location": "HaArba'a 4, Tel Aviv",
+            "food": []
+        }
+        {
+            "username": "Benedict",
+            "password": "slopyJoerules",
+            "location": "Sarona 26, Herzilia",
+            "food": []
+        }
+        {
+            "username": "Linda",
+            "password": "mushRisoto",
+            "location": "Abraham 12, Ashkelon",
+            "food": []
+        }
+        {
+            "username": "Segev",
+            "password": "stamYakar1000",
+            "location": "Habonim 34, Rishon LeZion",
+            "food": []
+        }
+ 
+    ]
+}
