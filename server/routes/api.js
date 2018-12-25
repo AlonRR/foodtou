@@ -8,9 +8,12 @@ const mainpageHTML =`./mainpage.html`
 router.get(`/sanity`,function(req,res){
     res.send(`It Works!`)
 })
+
 router.get(`/`,function(req,res){
     res.sendFile(mainpageHTML, {root: dist})
 })
+
+
 
 
 module.exports = router
