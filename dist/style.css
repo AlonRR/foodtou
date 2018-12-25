@@ -1,5 +1,14 @@
+#page1 {
+  display: grid;
+}
 #page1 h1 {
   color: red;
+}
+#page1 #login {
+  border: 2px solid black;
+  width: 50vh;
+  height: 50 vh;
+  margin: 0 auto;
 }
 #page2 {
   background-image: url("https://nerdist.com/wp-content/uploads/2016/09/OliverTwist_09022016.jpg");
