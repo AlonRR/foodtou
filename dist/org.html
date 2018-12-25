@@ -21,6 +21,7 @@
   
 
     <script id="organizations-template" type="text/x-handlebars-template">
+        <div id="org-info"></div>
         <table>
             <tr>{{name}}</tr>
             <tr>{{food}}</tr>
@@ -31,17 +32,25 @@
         </table>
     </script>
 
-    <div id="organizations-info">
-        <table style="width:100%">
-            <tr>
-                <th>Restaurant</th>
-                <th>Food</th>
-                <th>Amount</th>
-                <th>Unit</th>
-                <th>Expiration</th>
-                <th>Request</th>
+    <table style="width:100%">
+        <tr>
+            <th>Restaurant</th>
+            <th>Food</th>
+            <th>Amount</th>
+            <th>Unit</th>
+            <th>Expiration</th>
+            <th>Request</th>
+        </tr>
+        <tr>
+                <td>Jems</td>
+                <td>Carrots</td>
+                <td>5</td>
+                <td>kg</td>
+                <td>2.2.19</td>
+                <td><input class="reqInput" type="checkbox"></td>
             </tr>
-        </table>
+    </table>
+    <div id="org-append">
     </div>
 
     <script src="main.js"></script>
