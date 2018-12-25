@@ -3,22 +3,16 @@ class foodManager {
         this.RestaurantData = []
         this.OrganizationData = []
     }
-    async getSite(userName){
-        let data = await $.get(`/orgData/${userName}`)
-        if(userName === userName) {
-                
-        }
-    }
-    async getRestData(restName) {
-        let data = await $.get(`/restData/${restName}`)
+    async getRestaurantData() {
+        let data = await $.get(`/resData`)
         this.RestaurantData=data
     }
-    async getOrgData(orgName) {
-        let data = await $.get(`/orgData/${orgName}`)
+    async getOrgData() {
+        let data = await $.get(`/orgdata`)
         this.OrganizationData = data
     }
     inputResData(food) {
-        $.post(`/restData`, food, function (res) {
+        $.post(`/resData`, food, function (res) {
             if(res){
                 alert(`Saved`)
                 this.RestaurantData.push(food)
@@ -28,8 +22,8 @@ class foodManager {
             }
         })
     }
-    updateFood(foodId) {
-        $.post(`/foodData`, foodId, function (res) {
+    inputOrgData(food) {
+        $.post(`/resData`, food, function (res) {
             if(res){
                 alert(`Saved`)
                 this.OrganizationData.push(food)
