@@ -28,6 +28,8 @@ const Organization = mongoose.model("Organization", OrganizationSchema)
 const Restaurant = mongoose.model("Restaurant", RestaurantSchema)
 const Food = mongoose.model("Food", FoodSchema)
 
-module.exports = Organization
-module.exports = Restaurant
-module.exports = Food
+module.exports = {
+    org: Organiziation,
+    res: Restaurant,
+    food: Food
+}   

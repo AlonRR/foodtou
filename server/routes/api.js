@@ -10,6 +10,7 @@ const restHTML =  `./restaurant.html`
 router.get(`/sanity`,function(req,res){
     res.send(`It Works!`)
 })
+
 router.get(`/`,function(req,res){
     res.sendFile(mainpageHTML, {root: dist})
 })
@@ -23,6 +24,8 @@ router.get(`/restData/:restName`,function(req,res){
 router.post(`/restData`,food,function(req,res){
 
 })
+
+
 
 
 
