@@ -29,7 +29,7 @@ const Restaurant = mongoose.model("Restaurant", RestaurantSchema)
 const Food = mongoose.model("Food", FoodSchema)
 
 module.exports = {
-    org: Organiziation,
+    org: Organization,
     res: Restaurant,
     food: Food
 }   
