@@ -5,8 +5,7 @@ const path = require('path')
 const app = express()
 const api = require('./server/routes/api')
 const schemas = require('./server/model/schemas')
-const Restaurants = schemas.res
-const Organizations = schemas.org
+const User = schemas.user
 const Foods = schemas.food
 const jsonData = require('./dummy-data/fakeData')
 
@@ -20,15 +19,11 @@ mongoose.connect('mongodb://localhost/Food2You', { useNewUrlParser: true })
 app.use('/', api)
 
 let saveToDB = () => {
-    for (let i of jsonData.organization) {
-        let RestaurantsData = new Restaurants(i)
-        // RestaurantsData.save()
+    for (let i of jsonData.users) {
+        let UserData = new User(i)
+        // UserData.save()
     }
-    for (let i of jsonData.restaurant) {
-        let OrganizationsData = new Organizations(i)
-        // OrganizationsData.save()
-    }
-    for (let i of jsonData.Food) {
+        for (let i of jsonData.Food) {
         let FoodData = new Foods(i)
         // FoodData.save()
     }

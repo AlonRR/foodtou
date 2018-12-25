@@ -2,6 +2,10 @@ const express = require(`express`)
 const router = express.Router()
 const path = require(`path`)
 const dist = path.resolve(__dirname,`../../dist`)
+const schemas = require('../model/schemas')
+const Restaurants = schemas.res
+const Organizations = schemas.org
+const Foods = schemas.food
 
 const mainpageHTML =`./mainpage.html`
 const orgHTML = `./org.html`
@@ -15,13 +19,17 @@ router.get(`/`,function(req,res){
     res.sendFile(mainpageHTML, {root: dist})
 })
 router.get(`/orgData/:orgName`,function(req,res){
-    db.find(``)
-    res.send()
+    Organizations.find({}, function(err, data){
+        res.send(data)
+    })
+    
 })
 router.get(`/restData/:restName`,function(req,res){
-
+    Organizations.find({}, function(err, data){
+        res.send(data)
+    })
 })
-router.post(`/restData`,food,function(req,res){
+router.post(`/restData`,function(req,res){
 
 })
 
