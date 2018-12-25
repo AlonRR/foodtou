@@ -1,0 +1,97 @@
+{
+    "organization": [
+        {
+            "username": "RaananaMuni",
+            "password": "whastg",
+            "location": "Raanana municipality",
+            "food": []
+        },
+        {
+            "username": "TlvMuni",
+            "password": "disIspas#@",
+            "location": "Tel-Aviv municipality",
+            "food": []
+        },
+        {
+            "username": "SooupU",
+            "password": "super$affPA$$!",
+            "location": "this 7, this.city",
+            "food": []
+        },
+        {
+            "username": "FoodRes",
+            "password": "password",
+            "location": "I Forgot 420, Holon",
+            "food": []
+        },
+        {
+            "username": "Soup Kitchen",
+            "password": "passWordPa$$w0rd",
+            "location": "Burning 666, Hell",
+            "food": []
+        }
+    ],
+    "restaurant": [
+        {
+            "username": "Giraffe",
+            "password": "theBestCornSoup",
+            "location": "HaBarzel 4, Tel Aviv",
+            "food": []
+        },
+        {
+            "username": "Mina Tomei",
+            "password": "redcurry456",
+            "location": "HaArba'a 4, Tel Aviv",
+            "food": []
+        },
+        {
+            "username": "Benedict",
+            "password": "slopyJoerules",
+            "location": "Sarona 26, Herzilia",
+            "food": []
+        },
+        {
+            "username": "Linda",
+            "password": "mushRisoto",
+            "location": "Abraham 12, Ashkelon",
+            "food": []
+        },
+        {
+            "username": "Segev",
+            "password": "stamYakar1000",
+            "location": "Habonim 34, Rishon LeZion",
+            "food": []
+        }
+    ],
+    "Food":[ {
+        "name": "Carrot",
+        "expiration": "15/11/20",
+        "amount": 10,
+        "unit": "kg"
+    },
+    {
+        "name": "Potato",
+        "expiration": "4/3/25",
+        "amount": 10,
+        "unit": "kg"
+    },
+    {
+        "name": "Cheddar Cheese",
+        "expiration": "30/5/19",
+        "amount": 4,
+        "unit": "kg"  
+    },
+    {
+        "name": "Ground beef",
+        "expiration": "16/4/21",
+        "amount": 2,
+        "unit": "kg" 
+    },
+    {
+        "name": "Orange Juice",
+        "expiration": "6/6/45",
+        "amount": 4,
+        "unit": "L" 
+    }
+]
+}

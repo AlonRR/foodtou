@@ -1,17 +1,17 @@
 class Renderer {
-    renderRestaurant() {
-        $("#restaurants-info").empty()
-        let source = $("#restaurants-template").html()
-        let template = Handlebars.compile(source)
-        let newHTML = template({ allCityData })
-        $("#restaurants-info").append(newHTML)
-    }
-    renderOrganization(){
-        $("#organizations-info").empty()
+    // renderRestaurant() {
+    //     $("#restaurants-apend").empty()
+    //     let source = $("#restaurants-template").html()
+    //     let template = Handlebars.compile(source)
+    //     let newHTML = template({  })
+    //     $("#restaurants-append").append(newHTML)
+    // }
+    renderOrganization(food){
+        $("#org-append").empty()
         let source = $("#organizations-template").html()
         let template = Handlebars.compile(source)
-        let newHTML = template({ allCityData })
-        $("#organizations-info").append(newHTML)
+        let newHTML = template({food})
+        $("#org-append").append(newHTML)
     }
     
 }
