@@ -3,16 +3,46 @@
 <head>
     <title>Restaurant Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 </head>
-<body>
+<body id="page3">
+    
     <h1>Welcome Restaurants!</h1>
 
-    <script id="restaurants-template" type="text/x-handlebars-template">
+    <table style="width:100%">
+            <tr>
+                <th>Restaurant</th>
+                <th>Food</th>
+                <th>Amount</th>
+                <th>Unit</th>
+                <th>Expiration</th>
+                <th>Request</th>
+            </tr>
+        
+        </table>
     
+    
+    <script id="restaurants-template" type="text/x-handlebars-template">
+       {{each }}
+        <div id="restaurants-info">
+            <table id="res-table">
+                <tr><input placeholder="food"></tr>
+                <tr>{{food}}</tr>
+                <tr>{{amount}}</tr>
+                <tr>{{unit}}</tr>
+                <tr>{{expirationDate}}</tr>
+                <tr><input class="reqInput" type="checkbox"></tr>
+            </table>
+        </div>
     </script>
+    
+    <div id="restaurants-append">
 
-    <div id="restaurants-info"></div>
+    </div>
+    <div id="restaurants-info">
+
+    </div>
+
 
     <script src="main.js"></script>
 </body>
