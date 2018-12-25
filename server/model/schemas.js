@@ -21,10 +21,10 @@ const FoodSchema = new Schema({
     amount: Number,
     unit: String,
     restaurant: [{ type: Schema.Types.ObjectId, ref: 'Restaurant' }],
-    organization: true //default:true
+    organiziation: Boolean
 })
 
-const Organization = mongoose.model("Organization", OrganizationSchema)
+const Organiziation = mongoose.model("Organization", OrganizationSchema)
 const Restaurant = mongoose.model("Restaurant", RestaurantSchema)
 const Food = mongoose.model("Food", FoodSchema)
 
@@ -32,4 +32,4 @@ module.exports = {
     org: Organiziation,
     res: Restaurant,
     food: Food
-}   
+}

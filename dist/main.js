@@ -1,4 +1,2 @@
-// main html page
-$("#loginBtn").on("click",  async function (){
-    await 
-})
+//get on click org checkbox run:
+let item = //the res id or food id, pulls from document

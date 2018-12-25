@@ -1,16 +1,16 @@
 class Renderer {
-    renderRest(users) {
-        $("body").empty()
-        let source = $("#rest-template").html()
+    // renderRestaurant() {
+    //     $("#restaurants-apend").empty()
+    //     let source = $("#restaurants-template").html()
+    //     let template = Handlebars.compile(source)
+    //     let newHTML = template({  })
+    //     $("#restaurants-append").append(newHTML)
+    // }
+    renderOrganization(food){
+        $("#org-append").empty()
+        let source = $("#organizations-template").html()
         let template = Handlebars.compile(source)
-        let newHTML = template(users)
-        $("#restaurants-append").append(newHTML)
-    }
-    renderOrg(user){
-        $("body").empty()
-        let source = $("#org-template").html()
-        let template = Handlebars.compile(source)
-        let newHTML = template(users)
+        let newHTML = template({food})
         $("#org-append").append(newHTML)
     }
     
