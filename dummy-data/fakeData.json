@@ -1,65 +1,78 @@
 {
-    "organization": [
+    "users": [
         {
-            "username": "RaananaMuni",
+            "name": "RaananaMuni",
             "password": "whastg",
             "location": "Raanana municipality",
+            "type": "org",
+            "boolean": "true",
             "food": []
         },
         {
-            "username": "TlvMuni",
+            "name": "TlvMuni",
             "password": "disIspas#@",
             "location": "Tel-Aviv municipality",
+            "type": "org",
+            "boolean": "true",
             "food": []
         },
         {
-            "username": "SooupU",
+            "name": "SooupU",
             "password": "super$affPA$$!",
             "location": "this 7, this.city",
+            "type": "org",
+            "boolean": "true",
             "food": []
         },
         {
-            "username": "FoodRes",
+            "name": "FoodRes",
             "password": "password",
             "location": "I Forgot 420, Holon",
+            "type": "org",
+            "boolean": "true",
             "food": []
         },
         {
-            "username": "Soup Kitchen",
+            "name": "Soup Kitchen",
             "password": "passWordPa$$w0rd",
             "location": "Burning 666, Hell",
+            "type": "org",
+            "boolean": "true",
             "food": []
-        }
-    ],
-    "restaurant": [
+        }, 
         {
-            "username": "Giraffe",
+            "name": "Giraffe",
             "password": "theBestCornSoup",
             "location": "HaBarzel 4, Tel Aviv",
+            "type": "rest",
             "food": []
         },
         {
-            "username": "Mina Tomei",
+            "name": "Mina Tomei",
             "password": "redcurry456",
             "location": "HaArba'a 4, Tel Aviv",
+            "type": "rest",
             "food": []
         },
         {
-            "username": "Benedict",
+            "name": "Benedict",
             "password": "slopyJoerules",
             "location": "Sarona 26, Herzilia",
+            "type": "rest",
             "food": []
         },
         {
-            "username": "Linda",
+            "name": "Linda",
             "password": "mushRisoto",
             "location": "Abraham 12, Ashkelon",
+            "type": "rest",
             "food": []
         },
         {
-            "username": "Segev",
+            "name": "Segev",
             "password": "stamYakar1000",
             "location": "Habonim 34, Rishon LeZion",
+            "type": "rest",
             "food": []
         }
     ],
