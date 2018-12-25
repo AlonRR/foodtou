@@ -66,31 +66,31 @@
     ],
     "Food":[ {
         "name": "Carrot",
-        "expiration": 11.20,
+        "expiration": "15/11/20",
         "amount": 10,
         "unit": "kg"
     },
     {
         "name": "Potato",
-        "expiration": 4.19,
+        "expiration": "4/3/25",
         "amount": 10,
         "unit": "kg"
     },
     {
         "name": "Cheddar Cheese",
-        "expiration": 6.19,
+        "expiration": "30/5/19",
         "amount": 4,
         "unit": "kg"  
     },
     {
         "name": "Ground beef",
-        "expiration": 5.18,
+        "expiration": "16/4/21",
         "amount": 2,
         "unit": "kg" 
     },
     {
         "name": "Orange Juice",
-        "expiration": 6.21,
+        "expiration": "6/6/45",
         "amount": 4,
         "unit": "L" 
     }
