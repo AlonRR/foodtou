@@ -1,5 +1,70 @@
 {
-    "food":[ {
+    "organization": [
+        {
+            "username": "RaananaMuni",
+            "password": "whastg",
+            "location": "Raanana municipality",
+            "food": []
+        },
+        {
+            "username": "TlvMuni",
+            "password": "disIspas#@",
+            "location": "Tel-Aviv municipality",
+            "food": []
+        },
+        {
+            "username": "SooupU",
+            "password": "super$affPA$$!",
+            "location": "this 7, this.city",
+            "food": []
+        },
+        {
+            "username": "FoodRes",
+            "password": "password",
+            "location": "I Forgot 420, Holon",
+            "food": []
+        },
+        {
+            "username": "Soup Kitchen",
+            "password": "passWordPa$$w0rd",
+            "location": "Burning 666, Hell",
+            "food": []
+        }
+    ],
+    "restaurant": [
+        {
+            "username": "Giraffe",
+            "password": "theBestCornSoup",
+            "location": "HaBarzel 4, Tel Aviv",
+            "food": []
+        },
+        {
+            "username": "Mina Tomei",
+            "password": "redcurry456",
+            "location": "HaArba'a 4, Tel Aviv",
+            "food": []
+        },
+        {
+            "username": "Benedict",
+            "password": "slopyJoerules",
+            "location": "Sarona 26, Herzilia",
+            "food": []
+        },
+        {
+            "username": "Linda",
+            "password": "mushRisoto",
+            "location": "Abraham 12, Ashkelon",
+            "food": []
+        },
+        {
+            "username": "Segev",
+            "password": "stamYakar1000",
+            "location": "Habonim 34, Rishon LeZion",
+            "food": []
+        }
+ 
+    ],
+    "Food":[ {
         "name": "Carrot",
         "expiration": 11.20,
         "amount": 10,
