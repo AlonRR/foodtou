@@ -6,7 +6,7 @@ class Renderer {
         let newHTML = template(users)
         $("#restaurants-append").append(newHTML)
     }
-    renderOrg(user){
+    renderOrg(users){
         $("body").empty()
         let source = $("#org-template").html()
         let template = Handlebars.compile(source)
@@ -16,3 +16,4 @@ class Renderer {
     
 }
 
+a
