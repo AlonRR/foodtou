@@ -1,0 +1,18 @@
+#page1 h1 {
+  color: red;
+}
+#page2 {
+  background-color: #dfe6e9;
+}
+#page2 h1 {
+  color: green;
+}
+#page2 table,
+#page2 th,
+#page2 td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+#page2 button {
+  float: right;
+}
