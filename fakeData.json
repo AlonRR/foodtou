@@ -1,5 +1,5 @@
 {
-    "Food":[ {
+    "food":[ {
         "name": "Carrot",
         "expiration": 11.20,
         "amount": 10,
