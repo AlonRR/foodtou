@@ -31,6 +31,6 @@ let saveToDB = () => {
 // saveToDB()
 
 const port = 4000
-app.listen(port, function () {
+app.listen(process.env.PORT || port, function () {
     console.log(`Runnig on port ${port}`)
 })
