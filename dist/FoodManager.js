@@ -12,11 +12,7 @@ class FoodManager {
         $.post(`/food`, food, (res)=> {
             if (res) {
                 alert(`Saved`)
-                console.log(food)
-                console.log(this.userData)
                 this.userData.food.push(food)
-
-
             }
             else if (err) {
                 alert(`There was an error!`)
