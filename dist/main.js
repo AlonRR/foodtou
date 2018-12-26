@@ -50,4 +50,16 @@ $(`body`).on(`click`,`#org-to-mainPage, .rest-to-mainPage`,function(){
 $(`body`).on(`click`,`#signup`,function(){
     renderer.renderSignup()
 })
+$(`body`).on(`click`,`#signup-btn`,function(){
+    let newUser= {
+        name:$(`#name`).val(),
+        password:$(`#password`).val(),
+        location:$(`#location`).val(),
+        type:$(`#type`).val(),
+        boolean:true,
+        food:[]
+    }
+    foodManager.saveUser(newUser)
+})
 localStorageCheck()
+//signup-btn
