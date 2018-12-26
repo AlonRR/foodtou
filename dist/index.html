@@ -12,24 +12,31 @@
     <div id="rest-append"></div>
     <div id="org-append"></div>
     <div id="login-append"></div>
+    <div id="signup-append"></div>
     <script id="login-template" type="text/x-handlebars-template">
         <div id="login-page">
             <h1>Food2U</h1>
             <div id="about-us">
-                <p>Thank you for visiting our page. This initiative aims at ending food waste across the world
+                <div id="info-text">
+                    Thank you for visiting our page. This initiative aims at ending food waste across the world
                     and re-distributing it to those in need.
-
-                </p>
+                </div>
             </div>
 
-            <button id="sign-up">Sign-up</button>
-
-            
+            <button id="signup">Sign-up</button>
             <div class="login">
                 <p>User Login</p>
                 <input id="username" placeholder="username"> <br>
                 <button id="loginBtn">Login</button>
             </div>
+        </div>
+    </script>
+    <script id="signup-template" type="text/x-handlebars-template">
+        <div>
+            <td><input class="input" id="name" placeholder="name"></td>
+            <td><input class="input" id="password" placeholder="password"></td>
+            <td><input class="input" id="location" placeholder="location"></td>
+            <td><input class="input" id="type" placeholder="type"></td>
         </div>
     </script>
     <script id="org-template" type="text/x-handlebars-template">

@@ -16,5 +16,8 @@ class Renderer {
     renderLogin(){
         this.render(`login`)        
     }
+    renderSignup(){
+        this.render(`signup`)
+    }
 }
 
