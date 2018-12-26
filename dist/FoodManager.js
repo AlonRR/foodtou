@@ -1,18 +1,19 @@
 class FoodManager {
     constructor() {
-        this.userData = []
+        this.userData = {}
     }
     async login(userName) {
         let data = await $.get(`/site/${userName}`)
         this.userData = data
         return data
     }
-    async inputRestData(food) {
-        let data = await $.get('/foodData/')
-        $.post(`/foodData`, food, function (res) {
+     inputRestData(food) {
+        $.post(`/food`, food, (res)=> {
             if (res) {
                 alert(`Saved`)
-                this.userData.push(food)
+                console.log(food)
+                console.log(this.userData)
+                this.userData.food.push(food)
             }
             else if (err) {
                 alert(`There was an error!`)
