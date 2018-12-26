@@ -8,7 +8,8 @@
     "h h h h h h"
     "i i . s s . "
     "i i . . . ."
-    "l l l l l l";
+    "l l l l l l"
+    ". . . . . .";
     position: fixed;
     grid-row-gap: 5px;
     width: 100%;
@@ -24,6 +25,8 @@
     };
     .login{
         grid-area: l;
+        margin-bottom: 10px;
+
     }
     #sign-up{
         grid-area: s;
@@ -32,16 +35,25 @@
         grid-area: i;
         margin-left: 5px;
         border-radius: 50%;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        width: 40vw;
-        height:40vh;
+        // word-wrap: break-word;
+        // overflow-wrap: break-word;
+        width: 300px;
+        height:300px;
         border: 1px solid #000000;
         overflow:auto;
-         text-align: center;
-        p{
-            margin-bottom: 10px;
-        }
+        //  text-align: center;
+         position:relative;
+
+         #info-text{
+            //  margin: 0 auto;
+             width: 100px;
+             height: 100px;
+             position: absolute;
+             left:50%;
+             margin-left:-5px;
+             border-radius: 50%;
+
+         }
         }
 }
 
