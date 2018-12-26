@@ -19,7 +19,7 @@ router.post(`/food`, function (req, res) {
     res.send(`Saved`)
 })
 router.get(`/site/:userName`, async function (req, res) {
-    res.send(await User.find({ name: req.params.userName }))
+    res.send(await User.findOne({ name: req.params.userName }))
 })
 router.put(`/food/:foodId`, function (req, res) {
     Food.findByIdAndUpdate(req.params.foodId, {
