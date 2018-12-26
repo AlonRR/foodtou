@@ -26,6 +26,11 @@ router.get(`/site/:userName`, async function (req, res) {
     }
     res.send(data)
 })
+router.post(`/site`,function(req,res){
+    let newUser = new User(req.body)
+    newUser.save()
+    res.send(`saved`)
+})
 router.put(`/food/:foodId`, function (req, res) {
     let data = req.params.foodId
     Food.findByIdAndUpdate(data, {
