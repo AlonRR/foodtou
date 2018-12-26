@@ -1,43 +1,32 @@
 class foodManager {
     constructor() {
-        this.RestaurantData = []
-        this.OrganizationData = []
+        this.userData = []
     }
-    async getSite(userName){
-        let data = await $.get(`/orgData/${userName}`)
-        if(userName === userName) {
-                
-        }
+
+    async login(userName) {
+        let data = await $.get(`/userData/${userName}`)
+        this.userData = data
     }
-    async getRestData(restName) {
-        let data = await $.get(`/restData/${restName}`)
-        this.RestaurantData=data
-    }
-    async getOrgData(orgName) {
-        let data = await $.get(`/orgData/${orgName}`)
-        this.OrganizationData = data
-    }
-    inputResData(food) {
-        $.post(`/restData`, food, function (res) {
-            if(res){
+
+    async inputRestData(food) {
+        let data = await $.get('/foodData/')
+        $.post(`/foodData`, food, function (res) {
+            if (res) {
                 alert(`Saved`)
-                this.RestaurantData.push(food)
+                this.userData.push(food)
             }
-            else if(err){
+            else if (err) {
                 alert(`There was an error!`)
             }
         })
     }
     updateFood(foodId) {
         $.post(`/foodData`, foodId, function (res) {
-            if(res){
-                alert(`Saved`)
-                this.OrganizationData.push(food)
+            this.OrganizationData.push({
+                name: $("#name").val(),
+                expirationDate: $("#exp").val(),
+                amount: $("#amount").val(),
+                unit: $("#unit").val()
+            })
             }
-            else if(err){
-                alert(`There was an error!`)
-            }
-        })
-    }
-    
-}
+        }
