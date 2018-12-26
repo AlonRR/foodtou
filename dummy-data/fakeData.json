@@ -81,7 +81,7 @@
         "expirationDate": "15/11/20",
         "amount": 10,
         "unit": "kg",
-        "restaurant":{"5c234fea7778155d7451e81c"},
+        "restaurant":"5c234fea7778155d7451e81c",
         "organization":"true"
     },
     {
@@ -89,7 +89,7 @@
         "expirationDate": "4/3/25",
         "amount": 10,
         "unit": "kg",
-        "restaurant":{"5c234fea7778155d7451e81c"},
+        "restaurant":"5c234fea7778155d7451e81c",
         "organization":"true"
     },
     {
@@ -97,7 +97,7 @@
         "expirationDate": "30/5/19",
         "amount": 4,
         "unit": "kg",
-        "restaurant":{"5c234fea7778155d7451e81c"},
+        "restaurant":"5c234fea7778155d7451e81c",
         "organization":"true"
     },
     {
@@ -105,7 +105,7 @@
         "expirationDate": "16/4/21",
         "amount": 2,
         "unit": "kg",
-        "restaurant":{"5c234fea7778155d7451e81c"},
+        "restaurant":"5c234fea7778155d7451e81c",
         "organization":"true"
     },
     {
@@ -113,7 +113,7 @@
         "expirationDate": "6/6/45",
         "amount": 4,
         "unit": "L",
-        "restaurant":{"5c234fea7778155d7451e81c"},
+        "restaurant":"5c234fea7778155d7451e81c",
         "organization":"true"
     }
 ]
