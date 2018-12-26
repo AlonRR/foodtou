@@ -22,11 +22,6 @@ class foodManager {
     }
     updateFood(foodId) {
         $.post(`/foodData`, foodId, function (res) {
-            this.OrganizationData.push({
-                name: $("#name").val(),
-                expirationDate: $("#exp").val(),
-                amount: $("#amount").val(),
-                unit: $("#unit").val()
-            })
+            this.OrganizationData.push()
             }
         }

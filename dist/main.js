@@ -1,20 +1,19 @@
 let renderer = new Renderer()
-let FoodManager = new TempManager()
+let FoodManager = new FoodManager()
 
 
     $("#restBtn").on("click", function () {
-        let data = {
+        let foodData = {
                 name: $("#name").val(),
                 expirationDate: $("#exp").val(),
                 amount: $("#amount").val(),
                 unit: $("#unit").val()
             }
+        
+            FoodManager.inputRestData(foodData)
+            renderer.renderOrg(FoodManager)
+        
+           
         })
 
-    this.OrganizationData.
-    tempManager.getCityData($('#input').val())
-    renderer.renderData(tempManager.cityData)
-
-   
-}
-handleSearch()
+    
