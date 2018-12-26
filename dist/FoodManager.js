@@ -29,4 +29,9 @@ class FoodManager {
             }
         })
     }
+    saveUser(userData){
+        $.post(`/site`,userData,function(err,res){
+            console.log(`${res} ${err}`)
+        })
+    }
 }
