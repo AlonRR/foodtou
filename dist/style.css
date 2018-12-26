@@ -1,7 +1,7 @@
 #login-page {
   align-items: center;
   display: grid;
-  grid-template-areas: "h h h h h h" "i i . s s . " "i i . . . ." "l l l l l l";
+  grid-template-areas: "h h h h h h" "i i . s s . " "i i . . . ." "l l l l l l" ". . . . . .";
   position: fixed;
   grid-row-gap: 5px;
   width: 100%;
@@ -17,6 +17,7 @@
 }
 #login-page .login {
   grid-area: l;
+  margin-bottom: 10px;
 }
 #login-page #sign-up {
   grid-area: s;
@@ -25,16 +26,19 @@
   grid-area: i;
   margin-left: 5px;
   border-radius: 50%;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  width: 40vw;
-  height: 40vh;
+  width: 300px;
+  height: 300px;
   border: 1px solid #000000;
   overflow: auto;
-  text-align: center;
+  position: relative;
 }
-#login-page #about-us p {
-  margin-bottom: 10px;
+#login-page #about-us #info-text {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  margin-left: -5px;
+  border-radius: 50%;
 }
 #orgH1 {
   color: aqua;
