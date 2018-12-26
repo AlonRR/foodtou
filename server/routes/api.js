@@ -20,29 +20,33 @@ router.post(`/food`, function (req, res) {
 })
 router.get(`/site/:userName`, async function (req, res) {
     let data = await User.findOne({ name: req.params.userName })
-    if(data.type===`org`){
-        let foods = await Food.find({organization:true})
-        foods.forEach(food=> data.food.push(food))
+    if (data.type === `org`) {
+        let foods = await Food.find({ organization: true })
+        foods.forEach(food => data.food.push(food))
     }
     res.send(data)
 })
 router.put(`/food/:foodId`, function (req, res) {
-    Food.findByIdAndUpdate(req.params.foodId, {
+    let data = req.params.foodId
+    Food.findByIdAndUpdate(data, {
         $set: {
             organization: "false"
         }
     }, function (err, res) {
         console.log(res + err)
     })
-    Food.find(resta{})
+
     res.end()
 })
-
-
-
-
-
-
+router.get('/foods/:foodsId', function (req, res) {
+    let data = req.params.foodsId
+    Food.findOne({ _id: data }, function (err, rest) {
+        let restId = rest.restaurant
+        User.findById(restId, function (err, resto) {
+            res.send(resto.name)
+        })
+    })
+})
 
 
 module.exports = router
