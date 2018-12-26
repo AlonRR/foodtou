@@ -34,6 +34,7 @@ router.put(`/food/:foodId`, function (req, res) {
     }, function (err, res) {
         console.log(res + err)
     })
+    Food.find(resta{})
     res.end()
 })
 
