@@ -1,6 +1,21 @@
 let renderer = new Renderer()
 let foodManager = new FoodManager()
 
+const localStorageCheck = function(){
+    let userName = localStorage.getItem(`place`)
+    if(userName){
+        findAndRender(userName)
+    }
+}
+const findAndRender = async function(userName){
+    let data = await foodManager.login(userName)
+    localStorage.setItem(`place`, userName)
+    if (data.type === `org`) {
+        renderer.renderOrg(data)
+    } else if (data.type === `rest`) {
+        renderer.renderRest(data)
+    }
+}
 // remove food from table and update boolean to false
 $("body").on("click", ".checkbox", function () {
     $(this).siblings("#food").remove("#food-table")
@@ -21,12 +36,7 @@ $(`body`).on("click", '#restBtn', function () {
 
 $(`#loginBtn`).click(async function () {
     console.log(`working btn`)
-    let data = await foodManager.login($(`#username`).val())
-    if (data.type === `org`) {
-        renderer.renderOrg(data)
-        localStorage.setItem('org', data.name)
-    } else if (data.type === `rest`) {
-        renderer.renderRest(data)
-        localStorage.setItem('res', data.name)
-    }
+    let userName = $(`#username`).val()
+    findAndRender(userName)
 })
+localStorageCheck()
