@@ -1,7 +1,7 @@
 #login-page {
   align-items: center;
   display: grid;
-  grid-template-areas: "h h h h h h" "i i . . s s " "i i . l l l";
+  grid-template-areas: "h h h h h h" "i i . . . s" "i i . l l l" "i i . l l l";
   position: fixed;
   grid-row-gap: 5px;
   width: 100%;
@@ -9,21 +9,35 @@
   left: 0;
   top: 0;
   background: url("https://foodrevolution.org/wp-content/uploads/2018/03/blog-featured_healthy_foods-20180306.jpg");
+  font-family: 'Playfair Display', serif;
 }
 #login-page h1 {
   grid-area: h;
   color: #fab1a0;
   text-align: center;
+  border-radius: 25px ;
+  font-size: 54px;
 }
 #login-page .login {
   grid-area: l;
   margin-bottom: 10px;
   margin-right: 100px;
   width: 40vw;
-  height: 60vh;
-}
-#login-page .login p {
+  height: 45vh;
   text-align: center;
+  border-radius: 20px;
+  background-color: rgba(151, 151, 151, 0.4);
+  /* Black w/opacity/see-through */
+}
+#login-page .login input {
+  width: 70%;
+  height: 10%;
+  margin-bottom: 10px;
+}
+#login-page .login button {
+  width: 40%;
+  height: 10%;
+  border-radius: 40%;
 }
 #login-page #sign-up {
   grid-area: s;
@@ -34,7 +48,7 @@
   border-radius: 50%;
   width: 300px;
   height: 300px;
-  border: 1px solid #000000;
+  border: 1.5px solid #000000;
   overflow: auto;
   position: relative;
 }
@@ -69,15 +83,40 @@
 }
 #rest-info table,
 #rest-info th,
-#rest-info tr,
-#rest-info td {
+#rest-info tr {
   border: 1px solid black;
   border-collapse: collapse;
+  display: inline-block;
 }
 #rest-info table .input,
 #rest-info th .input,
-#rest-info tr .input,
-#rest-info td .input {
+#rest-info tr .input {
   width: 100%;
   box-sizing: border-box;
+}
+#signup-table th,
+#signup-table tr,
+#signup-table td {
+  border: 2px solid black;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+#signup-table th .input,
+#signup-table tr .input,
+#signup-table td .input {
+  width: 100%;
+  box-sizing: border-box;
+}
+#signup-table th th,
+#signup-table tr th,
+#signup-table td th {
+  width: 10%;
+}
+#signup-info {
+  background: url("https://foodrevolution.org/wp-content/uploads/2018/03/blog-featured_healthy_foods-20180306.jpg");
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  color: white;
+  display: inline-block;
 }
