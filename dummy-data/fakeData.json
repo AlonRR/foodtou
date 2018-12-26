@@ -81,35 +81,40 @@
         "expiration": "15/11/20",
         "amount": 10,
         "unit": "kg",
-        "boolean": "true"
+        "restaurant":"5c234fea7778155d7451e81c",
+        "organization":"true"
     },
     {
         "name": "Potato",
         "expiration": "4/3/25",
         "amount": 10,
         "unit": "kg",
-        "boolean": "true"
+        "restaurant":"5c234fea7778155d7451e81c",
+        "organization":"true"
     },
     {
         "name": "Cheddar Cheese",
         "expiration": "30/5/19",
         "amount": 4,
         "unit": "kg",
-        "boolean": "true" 
+        "restaurant":"5c234fea7778155d7451e81c",
+        "organization":"true"
     },
     {
         "name": "Ground beef",
         "expiration": "16/4/21",
         "amount": 2,
         "unit": "kg",
-        "boolean": "true"
+        "restaurant":"5c234fea7778155d7451e81c",
+        "organization":"true"
     },
     {
         "name": "Orange Juice",
         "expiration": "6/6/45",
         "amount": 4,
         "unit": "L",
-        "boolean": "true"
+        "restaurant":"5c234fea7778155d7451e81c",
+        "organization":"true"
     }
 ]
 }
