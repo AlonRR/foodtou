@@ -4,7 +4,10 @@ class foodManager {
         this.OrganizationData = []
     }
     async getSite(userName){
-        
+        let data = await $.get(`/orgData/${userName}`)
+        if(userName === userName) {
+                
+        }
     }
     async getRestData(restName) {
         let data = await $.get(`/restData/${restName}`)
