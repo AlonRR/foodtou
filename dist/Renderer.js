@@ -1,19 +1,20 @@
 class Renderer {
     constructor(){}
-    renderRest(name) {
-        $("#login-page").empty()
-        let source = $(`#rest-template`).html()
+    render(type,name){
+        $(`div`).empty()
+        let source = $(`#${type}-template`).html()
         let template = Handlebars.compile(source)
         let newHTML = template(name)
-        $("#restaurants-append").append(newHTML)
+        $(`#${type}-append`).append(newHTML)
+    }
+    renderRest(name) {
+        this.render(`rest`,name)
     }
     renderOrg(users){
-        $("#login-page").empty()
-        let source = $("#org-template").html()
-        let template = Handlebars.compile(source)
-        let newHTML = template(users)
-        $("#org-append").append(newHTML)
+        this.render(`org`,users)
     }
-    
+    renderLogin(){
+        this.render(`login`)        
+    }
 }
 
