@@ -1,22 +1,17 @@
 class foodManager {
     constructor() {
-        this.RestaurantData = []
-        this.OrganizationData = []
+        this.userData = []
     }
-    async getSite(userName) {
+    async login(userName) {
         let data = await $.get(`/site/${userName}`)
-        if (data.type === `rest`) {
-            this.RestaurantData = data.food
-        } else if (data.type === `org`) {
-            this.OrganizationData = data.food
-        }
-        return data
+        this.userData = data
     }
-    inputRestData(food) {
-        $.post(`/food`, food, function (res, err) {
+    async inputRestData(food) {
+        let data = await $.get('/foodData/')
+        $.post(`/foodData`, food, function (res) {
             if (res) {
                 alert(`Saved`)
-                this.RestaurantData.push(food)
+                this.userData.push(food)
             }
             else if (err) {
                 alert(`There was an error!`)
@@ -25,16 +20,9 @@ class foodManager {
     }
     updateFood(foodId) {
         $.ajax({
-            url:`/food/${foodId}`
+            url: `/food/${foodId}`,
+            method: `put`,
+            success: (res)
         })
-        // $.post(`/foodData`, foodId, function (res,err) {
-        //     if (res) {
-        //         alert(`Saved`)
-        //         this.OrganizationData.push(food)
-        //     }
-        //     else if (err) {
-        //         alert(`There was an error!`)
-        //     }
-        // })
     }
 }
