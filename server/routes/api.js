@@ -1,44 +1,29 @@
 const express = require(`express`)
 const router = express.Router()
-const path = require(`path`)
-const dist = path.resolve(__dirname,`../../dist`)
 const schemas = require('../model/schemas')
-const Restaurants = schemas.res
-const Organizations = schemas.org
-const Foods = schemas.food
+const Food = schemas.food
+const User = schemas.user
 
-const mainpageHTML =`./mainpage.html`
-const orgHTML = `./org.html`
-const restHTML =  `./restaurant.html`
-
-router.get(`/sanity`,function(req,res){
-    res.send(`It Works!`)
+router.get(`/sanity`, function (req, res) {
+   res.send(`It Works!`)
 })
-
-router.get(`/`,function(req,res){
-    res.sendFile(mainpageHTML, {root: dist})
+router.post(`/food`, function (req, res) {
+   let newFood = new Food(req.body.food)
+   newFood.save()
+   res.send(`Saved`)
 })
-router.get(`/orgData/:orgName`,function(req,res){
-    Organizations.find({}, function(err, data){
-        res.send(data)
-    })
-    
+router.get(`/site/:userName`, async function (req, res) {
+   res.send(await User.findOne({ name: req.params.userName }))
 })
-router.get(`/restData/:restName`,function(req,res){
-    Organizations.find({}, function(err, data){
-        res.send(data)
-    })
+router.put(`/food/:foodId`, function (req, res) {
+   Food.findByIdAndUpdate(req.params.foodId, {
+       $set: {
+           organization: false
+       }
+   }, function (err, res) {
+       console.log(res + err)
+   })
+   res.end()
 })
-router.post(`/restData`,function(req,res){
-
-})
-
-
-
-
-
-
-
-
 
 module.exports = router
