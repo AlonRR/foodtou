@@ -1,63 +1,35 @@
 const express = require(`express`)
 const router = express.Router()
 const path = require(`path`)
+const mongoose = require(`mongoose`)
+//What is the name of the DB?
 
-const dist = path.resolve(__dirname,`../../dist`)
+
+const dist = path.resolve(__dirname, `../../dist`)
 const schemas = require('../model/schemas')
-const Restaurants = schemas.res
-const Organizations = schemas.org
-const Foods = schemas.food
-
-const mainpageHTML = `./mainpage.html`
-const orgHTML = `./org.html`
-const restHTML = `./restaurant.html`
-
-const getData = async function (userName) {
-    let data = await db.findOne(user => user.username === username)
-    return data
-}
+const Food = schemas.food
+const User = schemas.user
 
 router.get(`/sanity`, function (req, res) {
     res.send(`It Works!`)
 })
-
-router.get(`/`, function (req, res) {
-    res.sendFile(mainpageHTML, { root: dist })
-})
-router.get(`/orgData/:orgName`, async function (req, res) {
-    res.send(await getData(req.params.orgName))
-})
-router.get(`/restData/:restName`, async function (req, res) {
-    res.send(await getData(req.params.restName))
-})
-router.post(`/restData`, food, function (req, res) {
-    let newFood = new food(food)
+router.post(`/food`, function (req, res) {
+    let newFood = new Food(req.body.food)
     newFood.save()
     res.send(`Saved`)
 })
-router.get(`/site/:userName`, function (req, res) {
-    let place = getData(req.params.userName)
-    if (place instanceof org) {
-        res.sendFile(orgHTML, { root: dist })
-    } else if (place instanceof rest) {
-        res.sendFile(restHTML, { root: dist })
-    } else {
-        res.send(`No a User`)
-    }
-// router.get(`/orgData/:orgName`,function(req,res){
-//     Organizations.find({}, function(err, data){
-//         res.send(data)
-//     })
-    
-// })
-// router.get(`/restData/:restName`,function(req,res){
-//     Organizations.find({}, function(err, data){
-//         res.send(data)
-//     })
-// })
-// router.post(`/restData`,function(req,res){
-
-// >>>>>>> master
+router.get(`/site/:userName`, async function (req, res) {
+    res.send(await User.find({ name: req.params.userName }))
+})
+router.put(`/food/:foodId`, function (req, res) {
+    Food.findByIdAndUpdate(req.params.foodId, {
+        $set: {
+            organization: "false"
+        }
+    }, function (err, res) {
+        console.log(res + err)
+    })
+    res.end()
 })
 
 
