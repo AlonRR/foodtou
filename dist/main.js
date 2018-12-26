@@ -56,7 +56,6 @@ $(`body`).on(`click`, `#signup`, function () {
 })
 
 localStorageCheck()
-=======
 $(`body`).on(`click`,`#signup-btn`,function(){
     let newUser= {
         name:$(`#name`).val(),
