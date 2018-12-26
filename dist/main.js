@@ -5,6 +5,8 @@ const localStorageCheck = function(){
     let userName = localStorage.getItem(`place`)
     if(userName){
         findAndRender(userName)
+    }else{
+        renderer.renderLogin()
     }
 }
 const findAndRender = async function(userName){
@@ -35,10 +37,14 @@ $(`body`).on("click", '#restBtn', function () {
     console.log($(`input`).val())
 })
 
-$(`#loginBtn`).click(async function () {
+$(`body`).on(`click`,`#loginBtn`,async function () {
     console.log(`working btn`)
     let userName = $(`#username`).val()
-    // localStorage.setItem(`place`, userName)
+    localStorage.setItem(`place`, userName)
     findAndRender(userName)
+})
+$(`body`).on(`click`,`#org-to-mainPage, .rest-to-mainPage`,function(){
+    localStorage.clear()
+    location = location
 })
 localStorageCheck()
