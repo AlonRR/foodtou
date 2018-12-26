@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Main Page</title>
+    <title>Food2U</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-</head>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet"></head>
 
 <body>
     <div id="rest-append"></div>
@@ -15,30 +15,48 @@
     <div id="signup-append"></div>
     <script id="login-template" type="text/x-handlebars-template">
         <div id="login-page">
-            <h1>Food2U</h1>
-            <div id="about-us">
+            <h1>Feed the Need</h1>
+            <!-- <div id="about-us">
                 <div id="info-text">
                     Thank you for visiting our page. This initiative aims at ending food waste across the world
                     and re-distributing it to those in need.
                 </div>
-            </div>
+            </div> -->
 
-            <button id="signup">Sign-up</button>
             <div class="login">
                 <p>User Login</p>
                 <input id="username" placeholder="username"> <br>
                 <button id="loginBtn">Login</button>
+                <button id="signup">signup</button>
             </div>
         </div>
     </script>
     <script id="signup-template" type="text/x-handlebars-template">
-        <div>
-            <td><input class="input" id="name" placeholder="name"></td>
-            <td><input class="input" id="password" placeholder="password"></td>
-            <td><input class="input" id="location" placeholder="location"></td>
-            <td><input class="input" id="type" placeholder="type"></td>
-        </div>
-    </script>
+        <div id="signup-background"></div>
+        <div id="signup-info">
+            <form>
+                <table id="signup-table" style="width:100%">
+            <tr>
+                        <th>Name</th>
+                        <th>password</th>
+                        <th>Location</th>
+                        <th>Type</th>
+                 </tr>
+                 <tr>
+                    <td><input class="input" id="name" placeholder="name"></td>
+                    <td><input class="input" id="password" placeholder="password"></td>
+                    <td><input class="input" id="location" placeholder="location"></td>
+                    <td><select>
+                            <option value="volvo">Restaurant</option>
+                            <option value="saab">Organization</option>
+                            <option value="opel">Volunteer</option>
+                          </select></td>
+                        </tr>  
+                    </table>
+                </form>
+                <button id="signup-btn">signup</button>
+    </div>
+            </script>
     <script id="org-template" type="text/x-handlebars-template">
           <h1 id="orgH1">Welcome {{name}} to your database</h1>
             <div id="org-info">
