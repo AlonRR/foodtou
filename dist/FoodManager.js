@@ -5,6 +5,7 @@ class FoodManager {
     async login(userName) {
         let data = await $.get(`/site/${userName}`)
         this.userData = data
+        return data
     }
     async inputRestData(food) {
         let data = await $.get('/foodData/')
