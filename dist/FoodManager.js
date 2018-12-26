@@ -13,7 +13,7 @@ class FoodManager {
             if (res) {
                 alert(`Saved`)
                 this.userData.food.push(food)
-                
+
             }
             else if (err) {
                 alert(`There was an error!`)
@@ -27,6 +27,11 @@ class FoodManager {
             success: (res) => {
                 return "success"
             }
+        })
+    }
+    updateFoodRest(foodId) {
+        $.get(`/foods/${foodId}`, function (restName) {
+            console.log(restName)
         })
     }
 }
