@@ -1,15 +1,17 @@
 let renderer = new Renderer()
 let foodManager = new FoodManager()
 
-const localStorageCheck = function(){
+const localStorageCheck = function () {
     let userName = localStorage.getItem(`place`)
-    if(userName){
+    if (userName) {
         findAndRender(userName)
-    }else{
+    } 
+    else {
         renderer.renderLogin()
     }
 }
-const findAndRender = async function(userName){
+
+const findAndRender = async function (userName) {
     let data = await foodManager.login(userName)
     if (data.type === `org`) {
         renderer.renderOrg(data)
@@ -17,12 +19,14 @@ const findAndRender = async function(userName){
         renderer.renderRest(data)
     }
 }
+
 // remove food from table and update boolean to false
 $("body").on("click", ".req-input", async function () {
+    await foodManager.updateFoodRest($("#name").attr('data-id'))
     await foodManager.updateFood($("#name").attr('data-id'))
-    $(this).closest("#tableRow").remove()
-    alert("Your food has been reserved!")
+    $(this).closest("#tableRow").remove() 
 })
+
 //send data to the food DB and remove row from view
 $(`body`).on("click", '#restBtn', function () {
     let foodData = {
@@ -37,29 +41,14 @@ $(`body`).on("click", '#restBtn', function () {
     console.log($(`input`).val())
 })
 
-$(`body`).on(`click`,`#loginBtn`,async function () {
+$(`body`).on(`click`, `#loginBtn`, async function () {
     console.log(`working btn`)
     let userName = $(`#username`).val()
     localStorage.setItem(`place`, userName)
     findAndRender(userName)
 })
-$(`body`).on(`click`,`#org-to-mainPage, .rest-to-mainPage`,function(){
+$(`body`).on(`click`, `#org-to-mainPage, .rest-to-mainPage`, function () {
     localStorage.clear()
     location = location
 })
-$(`body`).on(`click`,`#signup`,function(){
-    renderer.renderSignup()
-})
-$(`body`).on(`click`,`#signup-btn`,function(){
-    let newUser= {
-        name:$(`#name`).val(),
-        password:$(`#password`).val(),
-        location:$(`#location`).val(),
-        type:$(`#type`).val(),
-        boolean:true,
-        food:[]
-    }
-    foodManager.saveUser(newUser)
-})
 localStorageCheck()
-//signup-btn
