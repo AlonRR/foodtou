@@ -1,5 +1,6 @@
 let renderer = new Renderer()
-let FoodManager = new FoodManager()
+let foodManager = new FoodManager()
+
 
 
     $("#restBtn").on("click", function () {
@@ -9,11 +10,9 @@ let FoodManager = new FoodManager()
                 amount: $("#amount").val(),
                 unit: $("#unit").val()
             }
-        
-            FoodManager.inputRestData(foodData)
+            foodManager.inputRestData(foodData)
             renderer.renderOrg(FoodManager)
         
-           
         })
 
     

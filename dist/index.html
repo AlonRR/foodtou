@@ -22,8 +22,16 @@
            {{each users}}
            <h1>Welcome {{name}} to your database</h1>
            {{if boolean}}
-             <div id="restaurants-info">
-                 <table id="res-table">
+             <div id="org-info">
+                 <table id="org-table">
+                        <tr>
+                                <th>Restaurant</th>
+                                <th>Food</th>
+                                <th>Amount</th>
+                                <th>Unit</th>
+                                <th>Expiration</th>
+                                <th>Donate</th>
+                            </tr>
                      <tr><input placeholder="food"></tr>
                      <tr>{{food}}</tr>
                      <tr>{{amount}}</tr>
@@ -40,7 +48,7 @@
         {{#each users}}
         <h1>Thank you {{name}} for your contribution!</h1>   
         {{/each}}
-        <div id="org-info"></div>
+        <div id="rest-info"></div>
             <table style="width:100%">
                     <tr>
                         <th>Restaurant</th>
