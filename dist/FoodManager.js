@@ -23,5 +23,6 @@ class foodManager {
     updateFood(foodId) {
         $.post(`/foodData`, foodId, function (res) {
             this.OrganizationData.push()
-            }
+            })}
+
         }
