@@ -2,85 +2,81 @@
 <html>
 
 <head>
-    <title>Main Page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+   <meta charset=“utf-8” />
+   <title>Main Page</title>
+   <meta name=“viewport” content=“width=device-width, initial-scale=1”>
+   <link rel=“stylesheet” type=“text/css” media=“screen” href=“style.css” />
 </head>
 
 <body>
+   <div id=“login-page”>
+       <h1>Welcome to Food2U</h1>
 
-    <h1>Welcome to Food2U</h1>
 
-
-    <div class="login">
-        <p>User Login</p>
-        <input id="username" placeholder="username"> <br>
-        <button id="loginBtn">Login</button>
-    </div>
-
-    <script id="org-template" type="text/x-handlebars-template">
-           {{each users}}
-           <h1>Welcome {{name}} to your database</h1>
-           {{if boolean}}
-             <div id="restaurants-info">
-                 <table id="perm-table">
-                    <tr>
-                            <th>Restaurant</th>
-                            <th>Food</th>
-                            <th>Amount</th>
-                            <th>Unit</th>
-                            <th>Expiration</th>
-                            <th>Donate</th>
-                        </tr>
-                 </table>
-                 <table id="food-table">
-                     <tr><input placeholder="food"></tr>
-                     <tr id="food">{{food}}</tr>
-                     <tr>{{amount}}</tr>
-                     <tr>{{unit}}</tr>
-                     <tr>{{expirationDate}}</tr>
-                     <tr><input class="checkbox" type="checkbox"></tr>
-                 </table>
-             </div>
-             {{/if}}
-             {{/each}}
-         </script>
-
-    <script id="rest-template" type="text/x-handlebars-template">
-        {{#each users}}
-        <h1>Thank you {{name}} for your contribution!</h1>   
-        {{/each}}
-        <div id="org-info"></div>
-            <table style="width:100%">
-                    <tr>
-                        <th>Restaurant</th>
-                        <th>Food</th>
-                        <th>Amount</th>
-                        <th>Unit</th>
-                        <th>Expiration</th>
-                        <th>Donate</th>
-                    </tr>
-                <tr><input id="name" placeholder="name"></tr>
-                <tr><input id="food" placeholder="food"></tr>
-                <tr><input id="amount" placeholder="amount"></tr>
-                <tr><input id="unit" placeholder="unit"></tr>
-                <tr><input id="exp" placeholder="expiration date"></tr>
-                <tr><button id="restBtn">Dontate</button>></tr>
-            </table>
+       <div class=“login”>
+           <p>User Login</p>
+           <input id=“username” placeholder=“username”> <br>
+           <button id=“orgBtn”>Login</button>
+       </div>
+   </div>
+   <div id=“restaurants-append”></div>
+   <div id=“org-append”></div>
+   <script id=“org-template” type=“text/x-handlebars-template”>
+          <h1>Welcome {{name}} to your database</h1>
+            <div id=“org-info”>
+                <table id=“org-table”>
+                       <tr>
+                               <th>Restaurant</th>
+                               <th>Food</th>
+                               <th>Amount</th>
+                               <th>Unit</th>
+                               <th>Expiration</th>
+                               <th>Donate</th>
+                           </tr>
+                    <tr><input placeholder=“food”></tr>
+                    {{#each food}}
+                    <tr>{{food}}</tr>
+                    <tr>{{amount}}</tr>
+                    <tr>{{unit}}</tr>
+                    <tr>{{expirationDate}}</tr>
+                    <tr><input class=“reqInput” type=“checkbox”></tr>
+                    {{/each}}
+                </table>
+            </div>
         </script>
 
+   <script id=“rest-template” type=“text/x-handlebars-template”>
+       <!-- <h1>Thank you {{name}} for your contribution!</h1>    -->
+       <!-- <div id=“rest-info”> -->
+           <table style=“width:100%“>
+                   <tr>
+                       <th>Restaurant</th>
+                       <th>Food</th>
+                       <th>Amount</th>
+                       <th>Unit</th>
+                       <th>Expiration</th>
+                       <th>Donate</th>
+                   </tr>
+               <tr><input class=“input” id=“name” placeholder=“name”></tr>
+               <tr><input class=“input” id=“food” placeholder=“food”></tr>
+               <tr><input class=“input” id=“amount” placeholder=“amount”></tr>
+               <tr><input class=“input” id=“unit” placeholder=“unit”></tr>
+               <tr><input class=“input” id=“exp” placeholder=“expiration date”></tr>
+               <tr><button class=“input” id=“restBtn”>Dontate</button></tr>
+           </table>
+       <!-- </div> -->
+       </script>
 
-    <div id="restaurants-append"></div>
-    <div id="org-append"></div>
 
 
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="FoodManager.js"></script>
-    <script src="Renderer.js"></script>
-    <script src="main.js"></script>
+
+   <script src=“handlebars.js”></script>
+   <script src=“jquery-3.3.1.js”></script>
+   <script src=“FoodManager.js”></script>
+   <script src=“Renderer.js”></script>
+   <script src=“main.js”></script>
 </body>
 
 </html>

@@ -1,18 +1,18 @@
-class foodManager {
+class FoodManager {
     constructor() {
-        this.userData = []
+        this.userData = {}
     }
     async login(userName) {
         let data = await $.get(`/site/${userName}`)
         this.userData = data
-        console.log(this.userData)
+        return data
     }
-    async inputRestData(food) {
-        let data = await $.get('/foodData/')
-        $.post(`/foodData`, food, function (res) {
+
+     inputRestData(food) {
+        $.post(`/food`, food, (res)=> {
             if (res) {
                 alert(`Saved`)
-                this.userData.push(food)
+                this.userData.food.push(food)
             }
             else if (err) {
                 alert(`There was an error!`)
@@ -23,7 +23,9 @@ class foodManager {
         $.ajax({
             url: `/food/${foodId}`,
             method: `put`,
-            success: (res)
+            success: (res) => {
+                return "success"
+            }
         })
     }
 }
