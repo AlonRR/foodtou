@@ -1,43 +1,30 @@
-class foodManager {
+class FoodManager {
     constructor() {
-        this.RestaurantData = []
-        this.OrganizationData = []
+        this.userData = []
     }
-    async getSite(userName){
-        let data = await $.get(`/orgData/${userName}`)
-        if(userName === userName) {
-                
-        }
+    async login(userName) {
+        let data = await $.get(`/site/${userName}`)
+        this.userData = data
+        return data
     }
-    async getRestData(restName) {
-        let data = await $.get(`/restData/${restName}`)
-        this.RestaurantData=data
-    }
-    async getOrgData(orgName) {
-        let data = await $.get(`/orgData/${orgName}`)
-        this.OrganizationData = data
-    }
-    inputResData(food) {
-        $.post(`/restData`, food, function (res) {
-            if(res){
+    async inputRestData(food) {
+        $.post(`/food`, food, function (res) {
+            if (res) {
+                this.userData.push(food)
                 alert(`Saved`)
-                this.RestaurantData.push(food)
             }
-            else if(err){
+            else if (err) {
                 alert(`There was an error!`)
             }
         })
     }
     updateFood(foodId) {
-        $.post(`/foodData`, foodId, function (res) {
-            if(res){
-                alert(`Saved`)
-                this.OrganizationData.push(food)
-            }
-            else if(err){
-                alert(`There was an error!`)
+        $.ajax({
+            url: `/food/${foodId}`,
+            method: `put`,
+            success: (res) => {
+                return "success"
             }
         })
     }
-    
 }
