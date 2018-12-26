@@ -5,10 +5,12 @@ const localStorageCheck = function () {
     let userName = localStorage.getItem(`place`)
     if (userName) {
         findAndRender(userName)
-    } else {
+    } 
+    else {
         renderer.renderLogin()
     }
 }
+
 const findAndRender = async function (userName) {
     let data = await foodManager.login(userName)
     if (data.type === `org`) {
@@ -17,14 +19,14 @@ const findAndRender = async function (userName) {
         renderer.renderRest(data)
     }
 }
+
 // remove food from table and update boolean to false
 $("body").on("click", ".req-input", async function () {
     await foodManager.updateFoodRest($("#name").attr('data-id'))
     await foodManager.updateFood($("#name").attr('data-id'))
-    $(this).closest("#tableRow").remove()
-    
-    // alert(`Your food has been reserve! you can pick it up at ${name}`)
+    $(this).closest("#tableRow").remove() 
 })
+
 //send data to the food DB and remove row from view
 $(`body`).on("click", '#restBtn', function () {
     let foodData = {
@@ -50,5 +52,3 @@ $(`body`).on(`click`, `#org-to-mainPage, .rest-to-mainPage`, function () {
     location = location
 })
 localStorageCheck()
-
-// foodManager.updateFoodRest("5c23a3f7161ee65ec410011c")

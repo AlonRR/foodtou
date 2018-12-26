@@ -31,7 +31,7 @@ class FoodManager {
     }
     updateFoodRest(foodId) {
         $.get(`/foods/${foodId}`, function (restName) {
-            alert(`Your food has been reserve! you can pick it up at ${restName}`)
+            alert(`Your food has been reserved! You can pick it up at ${restName}.`)
         })
     }
 }
