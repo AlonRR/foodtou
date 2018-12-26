@@ -22,9 +22,9 @@
    <div id="restaurants-append"></div>
    <div id="org-append"></div>
    <script id="org-template" type="text/x-handlebars-template">
-          <h1>Welcome {{name}} to your database</h1>
+          <h1 id="orgH1">Welcome {{name}} to your database</h1>
             <div id="org-info">
-                <table id="org-table">
+                <table id="org-table" style="width:100%">
                        <tr>
                                <th>Restaurant</th>
                                <th>Food</th>
@@ -39,31 +39,42 @@
                         <tr>{{amount}}</tr>
                         <tr>{{unit}}</tr>
                         <tr>{{expirationDate}}</tr>
-                        <tr><input class="reqInput" type="checkbox"></tr>
+                        <!-- <tr><input class="reqInput" type="checkbox"></tr> -->
                     {{/each}}
-                </table>
             </div>
         </script>
 
    <script id="rest-template" type="text/x-handlebars-template">
-       <!-- <h1>Thank you {{name}} for your contribution!</h1>    -->
-       <!-- <div id="rest-info"> -->
-           <table style="width:100%">
-                   <tr>
-                       <th>Restaurant</th>
-                       <th>Food</th>
-                       <th>Amount</th>
-                       <th>Unit</th>
-                       <th>Expiration</th>
-                       <th>Donate</th>
-                   </tr>
-               <tr><input class="input" id="food" placeholder="food"></tr>
-               <tr><input class="input" id="amount" placeholder="amount"></tr>
-               <tr><input class="input" id="unit" placeholder="unit"></tr>
-               <tr><input class="input" id="exp" placeholder="expiration date"></tr>
-               <tr><button class="input" id="restBtn">Dontate</button></tr>
-           </table>
-       <!-- </div> -->
+        <h1>Thank you {{name}} for your contribution!</h1>    
+        <table style="width:100%">
+                <tr>
+                    <th>Restaurant</th>
+                    <th>Food</th>
+                    <th>Amount</th>
+                    <th>Unit</th>
+                    <th>Expiration</th>
+                    <th>Donate</th>
+                </tr>
+        </table>       
+        <div id="rest-info"> 
+            <form>
+           <table id="input-table" style="width:100%">
+                <tr>
+                    <td><input class="input" id="name" placeholder="name"></td>
+                    <td><input class="input" id="food" placeholder="food"></td>
+                    <td><input class="input" id="amount" placeholder="amount"></td>
+                    <td><input class="input" id="unit" placeholder="unit"></td>
+                    <td><input class="input" id="exp" placeholder="expiration date"></td>
+                    <td><button class="input" id="restBtn">Dontate</button></td>
+                </tr>
+                <!-- <tr><input class="input" id="food" placeholder="food"></tr> -->
+                <!-- <tr><input class="input" id="amount" placeholder="amount"></tr> -->
+                <!-- <tr><input class="input" id="unit" placeholder="unit"></tr> -->
+                <!-- <tr><input class="input" id="exp" placeholder="expiration date"></tr> -->
+                <!-- <tr><button class="input" id="restBtn">Dontate</button></tr> -->
+            </table>
+         </form>
+        </div>
        </script>
 
 
