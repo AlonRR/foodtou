@@ -8,8 +8,8 @@ class FoodManager {
         return data
     }
 
-     inputRestData(food) {
-        $.post(`/food`, food, (res)=> {
+    inputRestData(food) {
+        $.post(`/food`, food, (res) => {
             if (res) {
                 alert(`Saved`)
                 this.userData.food.push(food)

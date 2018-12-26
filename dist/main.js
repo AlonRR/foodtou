@@ -9,18 +9,17 @@ $("body").on("click", ".checkbox", function(){
 //send data to the food DB and remove row from view
 $(`body`).on("click", '#restBtn', function () {
     let foodData = {
-            name: $("#name").val(),
+            name: $("#food").val(),
             expirationDate: $("#exp").val(),
             amount: $("#amount").val(),
-            unit: $("#unit").val()
+            unit: $("#unit").val(),
+            restaurant:foodManager.userData._id
         }
         foodManager.inputRestData(foodData)
-        
+        console.log( $(`input`).val())
     })
 
-
-
-$(`#orgBtn`).click(async function(){
+$(`#loginBtn`).click(async function(){
     console.log(`working btn`)
     let data = await foodManager.login($(`#username`).val())
     if(data.type===`org`){
