@@ -1,14 +1,14 @@
 #login-page {
-  display: grid;
   align-items: center;
-  grid-template-areas: "h h h h h h" "i i i s s . " "l l l l l l";
+  display: grid;
+  grid-template-areas: "h h h h h h" "i i . s s . " "i i . . . ." "l l l l l l" ". . . . . .";
   position: fixed;
   grid-row-gap: 5px;
   width: 100%;
   height: 100%;
   left: 0;
   top: 0;
-  background-color: #F8EFBA;
+  background: url("https://foodrevolution.org/wp-content/uploads/2018/03/blog-featured_healthy_foods-20180306.jpg");
 }
 #login-page h1 {
   grid-area: h;
@@ -17,6 +17,7 @@
 }
 #login-page .login {
   grid-area: l;
+  margin-bottom: 10px;
 }
 #login-page #sign-up {
   grid-area: s;
@@ -24,6 +25,20 @@
 #login-page #about-us {
   grid-area: i;
   margin-left: 5px;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #000000;
+  overflow: auto;
+  position: relative;
+}
+#login-page #about-us #info-text {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  margin-left: -5px;
+  border-radius: 50%;
 }
 #orgH1 {
   color: aqua;
@@ -34,6 +49,7 @@
   height: 50vh;
   margin: 0 auto;
   background-color: antiquewhite;
+  margin-bottom: 10px;
 }
 #org-table table {
   border: 2px solid black;
