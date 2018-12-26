@@ -13,7 +13,7 @@ class FoodManager {
             if (res) {
                 alert(`Saved`)
                 this.userData.food.push(food)
-                
+
             }
             else if (err) {
                 alert(`There was an error!`)
@@ -29,9 +29,9 @@ class FoodManager {
             }
         })
     }
-    saveUser(userData){
-        $.post(`/site`,userData,function(err,res){
-            console.log(`${res} ${err}`)
+    updateFoodRest(foodId) {
+        $.get(`/foods/${foodId}`, function (restName) {
+            alert(`Your food has been reserved! You can pick it up at ${restName}.`)
         })
     }
 }
