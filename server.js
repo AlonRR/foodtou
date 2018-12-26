@@ -15,20 +15,20 @@ app.use(express.static(path.join(__dirname, 'node_modules')))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-mongoose.connect('mongodb://localhost/Food2You', { useNewUrlParser: true })
+mongoose.connect(process.env.CONNECTION_STRING || `mongodb://localhost/Food2U`, { useNewUrlParser: true })
 app.use('/', api)
 
 let saveToDB = () => {
     for (let i of jsonData.users) {
         let UserData = new User(i)
-        // UserData.save()
+        UserData.save()
     }
         for (let i of jsonData.Food) {
         let FoodData = new Foods(i)
-        // FoodData.save()
+        FoodData.save()
     }
 }
-saveToDB()
+// saveToDB()
 
 const port = 4000
 app.listen(port, function () {
