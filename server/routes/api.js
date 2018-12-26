@@ -35,14 +35,16 @@ router.put(`/food/:foodId`, function (req, res) {
     }, function (err, res) {
         console.log(res + err)
     })
-
     res.end()
 })
 router.get('/foods/:foodsId', function (req, res) {
     let data = req.params.foodsId
-    Food.findOne({ _id: data }, function (err, rest) {
+    Food.findById(data).populate(`restaurant`).exec(function (err, res) {
+        console.log(res)
         let restId = rest.restaurant
         User.findById(restId, function (err, resto) {
+            console.log(resto)
+            console.log(err)
             res.send(resto.name)
         })
     })

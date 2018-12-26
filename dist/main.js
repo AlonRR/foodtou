@@ -1,15 +1,16 @@
 let renderer = new Renderer()
 let foodManager = new FoodManager()
 
-const localStorageCheck = function(){
+const localStorageCheck = function () {
     let userName = localStorage.getItem(`place`)
-    if(userName){
+    if (userName) {
         findAndRender(userName)
+    } else {
+        renderer.renderLogin()
     }
 }
-const findAndRender = async function(userName){
+const findAndRender = async function (userName) {
     let data = await foodManager.login(userName)
-    localStorage.setItem(`place`, userName)
     if (data.type === `org`) {
         renderer.renderOrg(data)
     } else if (data.type === `rest`) {
@@ -22,7 +23,7 @@ $("body").on("click", ".req-input", async function () {
     await foodManager.updateFood($("#name").attr('data-id'))
     $(this).closest("#tableRow").remove()
     
-    alert("Your food has been reserved!")
+    // alert(`Your food has been reserve! you can pick it up at ${name}`)
 })
 //send data to the food DB and remove row from view
 $(`body`).on("click", '#restBtn', function () {
@@ -38,21 +39,16 @@ $(`body`).on("click", '#restBtn', function () {
     console.log($(`input`).val())
 })
 
-$(`#loginBtn`).click(async function () {
-    console.log(`working btn`)
-    let data = await foodManager.login($(`#username`).val())
-    if (data.type === `org`) {
-        renderer.renderOrg(data)
-    } else if (data.type === `rest`) {
-        renderer.renderRest(data)
-    }
-    foodManager.inputRestData(foodData)
-    console.log($(`input`).val())
-})
-
-$(`#loginBtn`).click(async function () {
+$(`body`).on(`click`, `#loginBtn`, async function () {
     console.log(`working btn`)
     let userName = $(`#username`).val()
+    localStorage.setItem(`place`, userName)
     findAndRender(userName)
 })
+$(`body`).on(`click`, `#org-to-mainPage, .rest-to-mainPage`, function () {
+    localStorage.clear()
+    location = location
+})
 localStorageCheck()
+
+// foodManager.updateFoodRest("5c23a3f7161ee65ec410011c")
