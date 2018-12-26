@@ -14,12 +14,17 @@ router.get(`/sanity`, function (req, res) {
     res.send(`It Works!`)
 })
 router.post(`/food`, function (req, res) {
-    let newFood = new Food(req.body.food)
+    let newFood = new Food(req.body)
     newFood.save()
     res.send(`Saved`)
 })
 router.get(`/site/:userName`, async function (req, res) {
-    res.send(await User.findOne({ name: req.params.userName }))
+    let data = await User.findOne({ name: req.params.userName })
+    if(data.type===`org`){
+        let foods = await Food.find({organization:true})
+        foods.forEach(food=> data.food.push(food))
+    }
+    res.send(data)
 })
 router.put(`/food/:foodId`, function (req, res) {
     Food.findByIdAndUpdate(req.params.foodId, {
