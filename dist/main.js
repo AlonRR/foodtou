@@ -47,4 +47,7 @@ $(`body`).on(`click`,`#org-to-mainPage, .rest-to-mainPage`,function(){
     localStorage.clear()
     location = location
 })
+$(`body`).on(`click`,`#signup`,function(){
+    renderer.renderSignup()
+})
 localStorageCheck()
