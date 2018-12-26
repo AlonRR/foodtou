@@ -1,19 +1,21 @@
 let renderer = new Renderer()
 let foodManager = new FoodManager()
 
+//send data to the food DB and remove row from view
 
-
-$("#restBtn").on("click", function () {
+$(`body`).on("click", '#restBtn', function () {
     let foodData = {
-        name: $("#name").val(),
-        expirationDate: $("#exp").val(),
-        amount: $("#amount").val(),
-        unit: $("#unit").val()
-    }
-    foodManager.inputRestData(foodData)
-    renderer.renderOrg(foodManager)
+            name: $("#name").val(),
+            expirationDate: $("#exp").val(),
+            amount: $("#amount").val(),
+            unit: $("#unit").val()
+        }
+        foodManager.inputRestData(foodData)
+        console.log( $(`input`).val())
+        
+    })
 
-})
+
 
 $(`#orgBtn`).click(async function(){
     console.log(`working btn`)
