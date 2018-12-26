@@ -15,7 +15,6 @@ $(`body`).on("click", '#restBtn', function () {
             unit: $("#unit").val()
         }
         foodManager.inputRestData(foodData)
-        console.log( $(`input`).val())
         
     })
 

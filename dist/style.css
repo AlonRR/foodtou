@@ -5,6 +5,9 @@ h1 {
   color: #fab1a0;
   text-align: center;
 }
+#orgH1 {
+  color: aqua;
+}
 .login {
   border: 2px solid black;
   width: 50vh;
@@ -12,20 +15,25 @@ h1 {
   margin: 0 auto;
   background-color: antiquewhite;
 }
-#page2 {
-  background-image: url("https://nerdist.com/wp-content/uploads/2016/09/OliverTwist_09022016.jpg");
-  color: white;
-  background-size: 200vh;
+#org-table table {
+  border: 2px solid black;
 }
-#page2 h1 {
-  color: green;
-}
-#page2 table,
-#page2 th,
-#page2 td {
+#org-table th,
+#org-table tr {
   border: 2px solid black;
   border-collapse: collapse;
 }
-#page2 button {
-  float: right;
+#rest-info table,
+#rest-info th,
+#rest-info tr,
+#rest-info td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+#rest-info table .input,
+#rest-info th .input,
+#rest-info tr .input,
+#rest-info td .input {
+  width: 100%;
+  box-sizing: border-box;
 }
