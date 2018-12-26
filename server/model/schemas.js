@@ -15,7 +15,7 @@ const FoodSchema = new Schema({
     expirationDate: String,
     amount: Number,
     unit: String,
-    restaurant: [{ type: Schema.Types.ObjectId, ref: 'Restaurant' }],
+    restaurant: { type: Schema.Types.ObjectId, ref: 'Restaurant' },
     organization: Boolean
 })
 
