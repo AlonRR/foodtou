@@ -13,6 +13,7 @@ class FoodManager {
             if (res) {
                 alert(`Saved`)
                 this.userData.food.push(food)
+                
             }
             else if (err) {
                 alert(`There was an error!`)

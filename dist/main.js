@@ -14,7 +14,8 @@ $(`body`).on("click", '#restBtn', function () {
             expirationDate: $("#exp").val(),
             amount: $("#amount").val(),
             unit: $("#unit").val(),
-            restaurant:foodManager.userData._id
+            restaurant:foodManager.userData._id,
+            organization: true
         }
         foodManager.inputRestData(foodData)
         console.log( $(`input`).val())

@@ -10,8 +10,8 @@ h1 {
 }
 .login {
   border: 2px solid black;
-  width: 50vh;
-  height: 50 vh;
+  width: 50vw;
+  height: 50vh;
   margin: 0 auto;
   background-color: antiquewhite;
 }
