@@ -28,7 +28,7 @@ let saveToDB = () => {
         FoodData.save()
     }
 }
-saveToDB()
+// saveToDB()
 
 const port = 4000
 app.listen(process.env.PORT || port, function () {

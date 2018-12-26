@@ -2,9 +2,10 @@ let renderer = new Renderer()
 let foodManager = new FoodManager()
 
 // remove food from table and update boolean to false
-$("body").on("click", ".checkbox", function(){
-    $(this).siblings("#food").remove("#food-table")
-    foodManager.updateFood($(this).siblings("#food").attr('data-id'))
+$("body").on("click", ".req-input", async function(){
+    console.log($(this).prev("#name"))
+    await foodManager.updateFood($(this).siblings("#name").attr('data-id'))
+    $(this).closest("#tableRow").remove()
 })
 //send data to the food DB and remove row from view
 $(`body`).on("click", '#restBtn', function () {
