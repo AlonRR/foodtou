@@ -24,6 +24,7 @@ $("body").on("click", ".checkbox", function () {
 //send data to the food DB and remove row from view
 $(`body`).on("click", '#restBtn', function () {
     let foodData = {
+
         name: $("#food").val(),
         expirationDate: $("#exp").val(),
         amount: $("#amount").val(),
