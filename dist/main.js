@@ -5,7 +5,7 @@ const localStorageCheck = function () {
     let userName = localStorage.getItem(`place`)
     if (userName) {
         findAndRender(userName)
-    } 
+    }
     else {
         renderer.renderLogin()
     }
@@ -21,10 +21,10 @@ const findAndRender = async function (userName) {
 }
 
 // remove food from table and update boolean to false
-$("body").on("click", ".req-input", async function () {
+$("body").on("click", ".req-input", function () {
     await foodManager.updateFoodRest($("#name").attr('data-id'))
     await foodManager.updateFood($("#name").attr('data-id'))
-    $(this).closest("#tableRow").remove() 
+    $(this).closest("#tableRow").remove()
 })
 
 //send data to the food DB and remove row from view
@@ -50,5 +50,8 @@ $(`body`).on(`click`, `#loginBtn`, async function () {
 $(`body`).on(`click`, `#org-to-mainPage, .rest-to-mainPage`, function () {
     localStorage.clear()
     location = location
+})
+$(`body`).on(`click`, `#signup`, function () {
+    renderer.renderSignup()
 })
 localStorageCheck()
