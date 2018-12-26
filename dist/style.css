@@ -1,7 +1,7 @@
 #login-page {
   align-items: center;
   display: grid;
-  grid-template-areas: "h h h h h h" "i i . . . s" "i i . l l l" "i i . l l l";
+  grid-template-rows: 1fr 1fr;
   position: fixed;
   grid-row-gap: 5px;
   width: 100%;
@@ -39,20 +39,7 @@
   height: 10%;
   border-radius: 40%;
 }
-#login-page #sign-up {
-  grid-area: s;
-}
-#login-page #about-us {
-  grid-area: i;
-  margin-left: 5px;
-  border-radius: 50%;
-  width: 300px;
-  height: 300px;
-  border: 1.5px solid #000000;
-  overflow: auto;
-  position: relative;
-}
-#login-page #about-us #info-text {
+#login-page #info-text {
   width: 200px;
   height: 200px;
   position: absolute;
@@ -62,10 +49,10 @@
   color: white;
   font-weight: bold;
 }
-#orgH1 {
+#login-page #orgH1 {
   color: aqua;
 }
-.login {
+#login-page .login {
   border: 2px solid black;
   width: 50vw;
   height: 50vh;
@@ -73,43 +60,39 @@
   background-color: antiquewhite;
   margin-bottom: 10px;
 }
-#org-table table {
+#login-page #org-table table {
   border: 2px solid black;
 }
-#org-table th,
-#org-table tr {
+#login-page #org-table th,
+#login-page #org-table tr {
   border: 2px solid black;
   border-collapse: collapse;
 }
-#rest-info table,
-#rest-info th,
-#rest-info tr {
+#login-page #rest-info table,
+#login-page #rest-info th,
+#login-page #rest-info tr {
   border: 1px solid black;
   border-collapse: collapse;
   display: inline-block;
 }
-#rest-info table .input,
-#rest-info th .input,
-#rest-info tr .input {
+#login-page #rest-info table .input,
+#login-page #rest-info th .input,
+#login-page #rest-info tr .input {
   width: 100%;
   box-sizing: border-box;
 }
-#signup-table th,
-#signup-table tr,
-#signup-table td {
+#login-page #signup-table th,
+#login-page #signup-table tr,
+#login-page #signup-table td {
   border: 2px solid black;
   border-collapse: collapse;
   border-spacing: 0;
 }
-#signup-table th .input,
-#signup-table tr .input,
-#signup-table td .input {
+#login-page #signup-table .input {
   width: 100%;
   box-sizing: border-box;
 }
-#signup-table th th,
-#signup-table tr th,
-#signup-table td th {
+#login-page #signup-table th {
   width: 10%;
 }
 #signup-info {
