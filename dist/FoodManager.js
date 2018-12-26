@@ -7,6 +7,7 @@ class FoodManager {
         this.userData = data
         return data
     }
+
      inputRestData(food) {
         $.post(`/food`, food, (res)=> {
             if (res) {
@@ -14,6 +15,8 @@ class FoodManager {
                 console.log(food)
                 console.log(this.userData)
                 this.userData.food.push(food)
+
+
             }
             else if (err) {
                 alert(`There was an error!`)
