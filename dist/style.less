@@ -1,16 +1,37 @@
 
-body{
-    background-color: #6c5ce7;
+// main page css//
 
+#login-page{
+    display: grid;
+    align-items: center;
+    grid-template-areas:
+    "h h h h h h"
+    "i i i s s . "
+    "l l l l l l";
+    position: fixed;
+    grid-row-gap: 5px;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #F8EFBA;
+    h1{
+        grid-area: h;
+        color: #fab1a0;
+        text-align: center;        
+    };
+    .login{
+        grid-area: l;
+    }
+    #sign-up{
+        grid-area: s;
+    };
+    #about-us{
+        grid-area: i;
+        margin-left: 5px;
+        
+    }
 }
- 
-h1{
-    color: #fab1a0;
-    text-align: center;        
-}
- 
-
-
 
 #orgH1{
     color: aqua;

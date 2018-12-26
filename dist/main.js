@@ -9,7 +9,6 @@ const localStorageCheck = function(){
 }
 const findAndRender = async function(userName){
     let data = await foodManager.login(userName)
-    localStorage.setItem(`place`, userName)
     if (data.type === `org`) {
         renderer.renderOrg(data)
     } else if (data.type === `rest`) {
@@ -38,19 +37,8 @@ $(`body`).on("click", '#restBtn', function () {
 
 $(`#loginBtn`).click(async function () {
     console.log(`working btn`)
-    let data = await foodManager.login($(`#username`).val())
-    if (data.type === `org`) {
-        renderer.renderOrg(data)
-    } else if (data.type === `rest`) {
-        renderer.renderRest(data)
-    }
-    foodManager.inputRestData(foodData)
-    console.log($(`input`).val())
-})
-
-$(`#loginBtn`).click(async function () {
-    console.log(`working btn`)
     let userName = $(`#username`).val()
+    // localStorage.setItem(`place`, userName)
     findAndRender(userName)
 })
 localStorageCheck()
