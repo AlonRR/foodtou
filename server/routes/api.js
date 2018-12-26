@@ -39,16 +39,11 @@ router.put(`/food/:foodId`, function (req, res) {
 })
 router.get('/foods/:foodsId', function (req, res) {
     let data = req.params.foodsId
-    Food.findById(data).populate(`restaurant`).exec(function (err, res) {
-        console.log(res)
-        let restId = rest.restaurant
-        User.findById(restId, function (err, resto) {
-            console.log(resto)
-            console.log(err)
+    Food.findById(data, function (err, rest) {
+        User.findById(rest.restaurant, function (err, resto) {
             res.send(resto.name)
         })
     })
 })
-
 
 module.exports = router
