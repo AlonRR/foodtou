@@ -1,7 +1,12 @@
 const express = require(`express`)
 const router = express.Router()
 const path = require(`path`)
-const dist = path.resolve(__dirname, `../../dist`)
+
+const dist = path.resolve(__dirname,`../../dist`)
+const schemas = require('../model/schemas')
+const Restaurants = schemas.res
+const Organizations = schemas.org
+const Foods = schemas.food
 
 const mainpageHTML = `./mainpage.html`
 const orgHTML = `./org.html`
@@ -39,6 +44,20 @@ router.get(`/site/:userName`, function (req, res) {
     } else {
         res.send(`No a User`)
     }
+// router.get(`/orgData/:orgName`,function(req,res){
+//     Organizations.find({}, function(err, data){
+//         res.send(data)
+//     })
+    
+// })
+// router.get(`/restData/:restName`,function(req,res){
+//     Organizations.find({}, function(err, data){
+//         res.send(data)
+//     })
+// })
+// router.post(`/restData`,function(req,res){
+
+// >>>>>>> master
 })
 
 
