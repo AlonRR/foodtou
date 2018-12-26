@@ -8,11 +8,10 @@ class FoodManager {
         return data
     }
     async inputRestData(food) {
-        let data = await $.get('/foodData/')
-        $.post(`/foodData`, food, function (res) {
+        $.post(`/food`, food, function (res) {
             if (res) {
-                alert(`Saved`)
                 this.userData.push(food)
+                alert(`Saved`)
             }
             else if (err) {
                 alert(`There was an error!`)
