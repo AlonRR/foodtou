@@ -58,7 +58,8 @@ $(`body`).on("click", '#restBtn', function () {
     }
     foodManager.inputRestData(foodData)
     console.log($(`input`).val())
-    localStorage.clear()
+    // localStorage.clear()
+    location = location
 })
 
 $(`body`).on(`click`, `#org-to-mainPage, .rest-to-mainPage`, function () {
