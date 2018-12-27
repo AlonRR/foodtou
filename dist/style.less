@@ -5,11 +5,12 @@
     align-items: center;
     display: grid;
     grid-template-rows: 1fr 1fr;
-    // "h h h h h h"
-    // "i i . . . s"
-    // "i i . l l l"
-    // "i i . l l l"
-    // ;
+    grid-template-areas: 
+    "h h h h h h"
+    "i i . . . s"
+    "i i . l l l"
+    "i i . l l l"
+    ;
     position: fixed;
     grid-row-gap: 5px;
     width: 100%;
@@ -22,7 +23,7 @@
 
     h1{
         grid-area: h;
-        color: #fab1a0;
+        color: black;
         text-align: center;   
         border-radius: 25px ;    
         font-size: 54px; 
@@ -35,7 +36,7 @@
         height: 45vh;
         text-align: center;
         border-radius: 20px;
-        background-color: rgba(151, 151, 151, 0.4); /* Black w/opacity/see-through */
+        background-color: rgba(151, 151, 151, 0.4); 
 
         input{
             width: 70%;
@@ -46,42 +47,43 @@
             width: 40%;
             height: 10%;
             border-radius: 40%;
-            // background-color: pink;
-
-
         }
     }
-    // #sign-up{
-    //     grid-area: s;
-    // };
-    // #about-us{
-    //     grid-area: i;
-    //     margin-left: 5px;
-    //     border-radius: 50%;
-    //     // word-wrap: break-word;
-    //     // overflow-wrap: break-word;
-    //     width: 300px;
-    //     height:300px;
-    //     border: 1.5px solid #000000;
-    //     overflow:auto;
-    //     //  text-align: center;
-    //      position:relative;
+    #sign-up{
+        grid-area: s;
+    };
+    #about-us{
+        // grid-area: i;
+        // margin-left: 5px;
+        // border-radius: 50%;
+        // // word-wrap: break-word;
+        // // overflow-wrap: break-word;
+        // width: 300px;
+        // height:300px;
+        // overflow:auto;
+        // //  text-align: center;
+        //  position:relative;
 
-         #info-text{
-            //  margin: 0 auto;
-            width: 200px;
-            height: 200px;
-            position: absolute;
-            margin-top: 20%;
-            margin-right: 20%;
-            margin-left: 20%;
-            color:white;
-            font-weight: bold;
-            //insert line gaps
-            //  margin-right: 60px;
-            //  border-radius: 50%;
+        //     width: 30vw;
+        //     height: 30vh;
+        //     position: absolute;
+        //     margin-top: 20%;
+        //     margin-right: 20%;
+        //     margin-left: 20%;
+        //     color:white;
+        //     font-weight: bold;
+        //      margin-right: 60px;
+        //      border-radius: 50%;
+             border: 1.5px solid #000000;
+   background-color: #ED8713;
+    height: 150px;
+    width: 150px;
+    margin: 10px;
+    // margin-top: 50px;
+    text-align: center
 
-         }
+         
+        }
         
 //ORGANIZATION PAGE 
 
@@ -113,7 +115,7 @@
         border: 1px solid black;
         border-collapse: collapse;
         display: inline-block;
-
+    }
         .input {
             width: 100%;
             box-sizing: border-box;
@@ -135,7 +137,7 @@
             width: 10%;
         }
         }
-}
+
 
 #signup-info{
     background: url("https://foodrevolution.org/wp-content/uploads/2018/03/blog-featured_healthy_foods-20180306.jpg");
