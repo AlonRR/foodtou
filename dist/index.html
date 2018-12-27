@@ -6,21 +6,22 @@
     <title>Food2U</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet"></head>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+</head>
 
 <body>
     <div id="rest-append"></div>
     <div id="org-append"></div>
     <div id="login-append"></div>
     <div id="signup-append"></div>
+
     <script id="login-template" type="text/x-handlebars-template">
         <div id="login-page">
             <h1>Feed the Need</h1>
             <div id="about-us">
-                <div id="info-text">
-                    Thank you for visiting our page. This initiative aims at ending food waste across the world
+                   <span> Thank you for visiting our page. This initiative aims at ending food waste across the world
                     and re-distributing it to those in need.
-                </div>
+                    <span>
             </div>
 
             <div class="login">
@@ -31,30 +32,29 @@
             </div>
         </div>
     </script>
+
     <script id="signup-template" type="text/x-handlebars-template">
-        <div id="signup-background"></div>
         <div id="signup-info">
-            <form>
-                <table id="signup-table" style="width:100%">
-            <tr>
-                        <th>Name</th>
-                        <th>password</th>
-                        <th>Location</th>
-                        <th>Type</th>
-                 </tr>
-                 <tr>
-                    <td><input class="input" id="name" placeholder="name"></td>
-                    <td><input class="input" id="password" placeholder="password"></td>
-                    <td><input class="input" id="location" placeholder="location"></td>
-                    <td><select>
-                            <option value="volvo">Restaurant</option>
-                            <option value="saab">Organization</option>
-                            <option value="opel">Volunteer</option>
-                          </select></td>
-                        </tr>  
-                    </table>
-                </form>
-                <button id="signup-btn">signup</button>
+                <form >
+                    
+                    <h1>Sign up</h1><br/>
+                  
+                    <span class="input"></span>
+                    <input type="text" id="name" placeholder="Name" title="Format: Xx[space]Xx (e.g. Alex Cican)" autofocus autocomplete="off" required pattern="^\w+\s\w+$" />
+                    <span class="input"></span>
+                    <input type="password" name="password" id="password" placeholder="Password" title="Password min 8 characters. At least one UPPERCASE and one lowercase letter" required pattern="(?=^.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"/>
+                    <span id="passwordMeter"></span>
+                    <input type="text" id="location" placeholder="Location" required>
+                    <select id="type">
+                            <option></option>
+                            <option id="rest">Restaurant</option>
+                            <option id="org">Organization</option>
+                            <option id="volunteer">Volunteer</option>
+                          </select>
+                  
+                    <button type="submit" value="Sign Up" title="Submit form" id="signup-btn" class="icon-arrow-right"><span>Sign up</span></button>
+                  </form>   
+             
     </div>
             </script>
     <script id="org-template" type="text/x-handlebars-template">
