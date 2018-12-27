@@ -58,7 +58,7 @@ $(`body`).on("click", '#restBtn', async function () {
     }
     let check = await foodManager.inputRestData(foodData)
     if (!check) {
-        alert(`bad!!!`)
+        alert(`Please fill all data fields`)
     } else {
         console.log($(`input`).val())
         localStorage.clear()
@@ -85,7 +85,7 @@ $(`body`).on(`click`, `#signup-btn`, async function () {
     }
     let check = await foodManager.saveUser(newUser)
     if (!check) {
-        alert(`bad`)
+        alert(`Please fill all data fields`)
     } else {
         renderer.renderLogin()
     }
