@@ -25,10 +25,10 @@
             </div> -->
 
             <div class="login">
-                <p>User Login</p>
+                <p class="text">User Login</p>
                 <input id="username" placeholder="username"> <br>
                 <button id="loginBtn">Login</button><br>
-               <span>Sign up:</span> <button id="signup">signup</button>
+               <button id="signup">signup</button>
             </div>
         </div>
     </script>
@@ -63,7 +63,7 @@
             <div id="org-info">
                 <button id="org-to-mainPage">Main Page</button>
                 <form>
-                <table id="org-table" style="width:100%">
+                <table id="org-table" style="width:95%">
                        <tr>
                                <th>Food</th>
                                <th>Amount</th>
@@ -86,22 +86,23 @@
         </script>
 
     <script id="rest-template" type="text/x-handlebars-template">
-        <h1>Thank you {{name}} for your contribution!</h1>    
-        <button class="rest-to-mainPage">Main Page</button>
-        <table style="width:100%">
-                <tr>
-                    <th>Food</th>
-                    <th>Amount</th>
-                    <th>Unit</th>
-                    <th>Expiration</th>
-                    <th>Donate</th>
-                </tr>
-        </table>       
         <div id="rest-info"> 
-            <form>
-           <table id="input-table" style="width:100%">
-                <tr>
-                    <td><input class="input" id="food" placeholder="food"></td>
+                <button class="rest-to-mainPage">Return to Main Page</button>
+                <div id="header">
+                    <div> Welcome: {{name}} </div>
+                </div>
+
+                <form>
+                    <table id="input-table" style="width:95%" class="no-spacing" cellspacing="0">
+                            <tr>
+                                <th>Food</th>
+                                <th>Amount</th>
+                                <th>Unit</th>
+                                <th>Expiration</th>
+                                <th>Donate</th>
+                            </tr>
+                            <tr>
+                                <td><input class="input" id="food" placeholder="food"></td>
                     <td><input class="input" id="amount" placeholder="amount"></td>
                     <td><input class="input" id="unit" placeholder="unit"></td>
                     <td><input class="input" id="exp" placeholder="expiration date"></td>
