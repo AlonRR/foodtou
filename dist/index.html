@@ -35,9 +35,10 @@
 
     <script id="signup-template" type="text/x-handlebars-template">
         <div id="signup-info">
-                <form >
-                    <h1>Sign up</h1><br/>
+               
+
                   <div id="signup-box">
+                      <span id="title">Sign up</span><br/>
                     <input type="text" id="name" placeholder="Name" title="Format: Xx[space]Xx (e.g. Alex Cican)" autofocus autocomplete="off" required pattern="^\w+\s\w+$" /> <br>
                     <input type="password" name="password" id="password" placeholder="Password" title="Password min 8 characters. At least one UPPERCASE and one lowercase letter" required pattern="(?=^.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"/> <br>
                     <input type="text" id="location" placeholder="Location" required><br>
@@ -51,7 +52,6 @@
                   
                     <button type="submit" value="Sign Up" title="Submit form" id="signup-btn" class="icon-arrow-right"><span>Sign up</span></button>
                 </div>
-                </form>   
              
     </div>
             </script>
@@ -75,7 +75,7 @@
                         <td> {{amount}}</td>
                         <td>{{unit}}</td>
                         <td>{{expirationDate}}</td>
-                        <td><button class="req-input"></button></td>
+                        <td><button class="req-input">Reserve</button></td>
                     </tr>
                     {{/each}}
                         </table>

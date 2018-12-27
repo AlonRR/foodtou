@@ -55,29 +55,43 @@
   margin-top: 13%;
   margin-right: 10px;
 }
-#login-page #signup-table th,
-#login-page #signup-table tr,
-#login-page #signup-table td {
+#login-page #org-info th,
+#login-page #org-info tr,
+#login-page #org-info td {
   border: 2px solid black;
   border-collapse: collapse;
   border-spacing: 0;
 }
-#login-page #signup-table .input {
+#login-page #org-info .input {
   width: 100%;
   box-sizing: border-box;
 }
-#login-page #signup-table th {
+#login-page #org-info th {
   width: 10%;
 }
-#login-page #signup-info {
+#signup-info {
   background: url("https://foodrevolution.org/wp-content/uploads/2018/03/blog-featured_healthy_foods-20180306.jpg");
   width: 100%;
   height: 100%;
   position: fixed;
   color: white;
   display: inline-block;
+  text-align: center;
 }
-#login-page #rest-info {
+#signup-info #signup-box {
+  border: 1px solid black;
+  width: 50vw;
+  height: 50vh;
+  margin: 0 auto;
+  background-color: rgba(225, 225, 225, 0.479);
+  margin-top: 20%;
+  border-radius: 25px;
+}
+#signup-info #signup-box #title {
+  font-size: 26px;
+  margin: 10px;
+}
+#rest-info {
   align-items: center;
   justify-content: center;
   position: fixed;
@@ -86,22 +100,22 @@
   background: url("https://foodrevolution.org/wp-content/uploads/2018/03/blog-featured_healthy_foods-20180306.jpg");
   font-family: 'Playfair Display', serif;
 }
-#login-page #rest-info table {
+#rest-info table {
   border: 1px solid black;
   background-color: rgba(225, 225, 225, 0.479);
   margin-left: 15px;
 }
-#login-page #rest-info table th {
+#rest-info table th {
   border: 1px solid black;
 }
-#login-page #rest-info table td {
+#rest-info table td {
   border: 1px solid black;
   /* Style just to show the table cell boundaries */
 }
-#login-page #rest-info table.no-spacing {
+#rest-info table.no-spacing {
   border-spacing: 0;
 }
-#login-page #org-info {
+#org-info {
   align-items: center;
   justify-content: center;
   position: fixed;
@@ -110,18 +124,18 @@
   background: url("https://foodrevolution.org/wp-content/uploads/2018/03/blog-featured_healthy_foods-20180306.jpg");
   font-family: 'Playfair Display', serif;
 }
-#login-page #org-info table {
+#org-info table {
   border: 1px solid black;
   background-color: rgba(225, 225, 225, 0.479);
   margin-left: 15px;
 }
-#login-page #org-info table th {
+#org-info table th {
   border: 1px solid black;
 }
-#login-page #org-info table td {
+#org-info table td {
   border: 1px solid black;
   /* Style just to show the table cell boundaries */
 }
-#login-page #org-info table.no-spacing {
+#org-info table.no-spacing {
   border-spacing: 0;
 }
