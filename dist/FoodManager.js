@@ -5,14 +5,11 @@ class FoodManager {
     async login(userName) {
         let data = await $.get(`/site/${userName}`)
         this.userData = data
-        console.log(data)
+        // console.log(data)
         return data
     }
 
     inputRestData(food) {
-        if(!(food.name && food.expirationDate && food.amount && food.unit)){
-            return false
-        }
         $.post(`/food`, food, (res) => {
             if (res) {
                 alert(`Saved`)
@@ -40,13 +37,11 @@ class FoodManager {
         })
     }
     saveUser(userData) {
-        if (!(userData.Name && userData.password && userData.location && userData.type)) {
-            return false
-        }
         $.post(`/site`, userData, function (err, res) {
             console.log(`${res} ${err}`)
             if (res === `saved`) {
                 alert(`Saved`)
+                return null
             } else {
                 console.log(err[0])
                 return err
