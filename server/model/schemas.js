@@ -2,19 +2,19 @@ const mongoose = require(`mongoose`)
 const Schema = mongoose.Schema
 
 const UserSchema = new Schema({
-    name: String,
-    password: String,
-    location: String,
-    type: String,
+    name:{type: String, required: true},
+    password:{type: String, required: true},
+    location:{type: String, required: true},
+    type:{type: String, required: true},
     boolean: Boolean,
     food: [{ type: Schema.Types.ObjectId, ref: 'Food' }]
 })
 
 const FoodSchema = new Schema({
-    name: String,
-    expirationDate: String,
-    amount: Number,
-    unit: String,
+    name: {type: String, required: true},
+    expirationDate: {type: String, required: true},
+    amount: {type: Number, required: true},
+    unit: {type: String, required: true},
     restaurant: { type: Schema.Types.ObjectId, ref: 'Restaurant' },
     organization: Boolean
 })
