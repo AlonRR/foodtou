@@ -1,8 +1,7 @@
 #login-page {
   align-items: center;
   display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: "h h h h h h" "i i . . . s" "i i . l l l" "i i . l l l";
+  grid-template-rows: 1fr 1fr ;
   position: fixed;
   grid-row-gap: 5px;
   width: 100%;
@@ -13,21 +12,21 @@
   font-family: 'Playfair Display', serif;
 }
 #login-page h1 {
-  grid-area: h;
+  grid-row: 1;
   color: black;
   text-align: center;
   border-radius: 25px ;
   font-size: 54px;
 }
 #login-page .login {
-  grid-area: l;
+  grid-row: 2;
   margin-bottom: 10px;
   margin-right: 100px;
-  width: 40vw;
-  height: 45vh;
+  width: 400px;
+  height: 400px;
   text-align: center;
   border-radius: 20px;
-  background-color: rgba(151, 151, 151, 0.4);
+  background: rgba(225, 225, 225, 0.479);
 }
 #login-page .login input {
   width: 70%;
@@ -38,17 +37,6 @@
   width: 40%;
   height: 10%;
   border-radius: 40%;
-}
-#login-page #sign-up {
-  grid-area: s;
-}
-#login-page #about-us {
-  border: 1.5px solid #000000;
-  background-color: #ED8713;
-  height: 150px;
-  width: 150px;
-  margin: 10px;
-  text-align: center;
 }
 #login-page #orgH1 {
   color: aqua;
