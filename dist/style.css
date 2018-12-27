@@ -164,14 +164,25 @@ body {
 }
 #rest-info table td ::-webkit-input-placeholder {
   text-align: center;
-  color: #e4dcdc;
+  color: #dfd5d5;
   font-size: 16px;
 }
 #rest-info table.no-spacing {
   border-spacing: 0;
 }
-#rest-info button {
-  width: 15%;
+#rest-info #restBtn {
+  grid-row: 3;
+  justify-self: center;
+  width: 60px;
+  height: 32px;
+  border-radius: 20px;
+}
+#rest-info .to-mainPage {
+  grid-row: 4;
+  justify-self: center;
+  width: 130px;
+  height: 32px;
+  border-radius: 20px;
 }
 #org-info {
   align-items: center;
@@ -196,8 +207,4 @@ body {
 }
 #org-info table.no-spacing {
   border-spacing: 0;
-}
-#org-info #restBtn {
-  grid-row: 3;
-  float: right;
 }
