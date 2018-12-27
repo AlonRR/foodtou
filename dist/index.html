@@ -25,45 +25,43 @@
             </div> -->
 
             <div class="login">
-                <p>User Login</p>
-                <input id="username" placeholder="username"> <br>
-                <button id="loginBtn">Login</button><br>
-               <span>Sign up:</span> <button id="signup">signup</button>
+                <p class="text">User Login</p>
+                <input id="username" placeholder="username">
+                <input type="password" id="password" placeholder="password"> <br>                <button id="loginBtn">Login</button><br>
+               <button id="signup">signup</button>
             </div>
         </div>
     </script>
 
     <script id="signup-template" type="text/x-handlebars-template">
         <div id="signup-info">
-                <form >
-                    
-                    <h1>Sign up</h1><br/>
-                  
-                    <span class="input"></span>
-                    <input type="text" id="name" placeholder="Name" title="Format: Xx[space]Xx (e.g. Alex Cican)" autofocus autocomplete="off" required pattern="^\w+\s\w+$" />
-                    <span class="input"></span>
-                    <input type="password" name="password" id="password" placeholder="Password" title="Password min 8 characters. At least one UPPERCASE and one lowercase letter" required pattern="(?=^.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"/>
-                    <span id="passwordMeter"></span>
-                    <input type="text" id="location" placeholder="Location" required>
+               
+
+                  <div id="signup-box">
+                      <span id="title">Sign up</span><br/>
+                    <input type="text" id="name" placeholder="Name" title="Format: Xx[space]Xx (e.g. Alex Cican)" autofocus autocomplete="off" required pattern="^\w+\s\w+$" /> <br>
+                    <input type="password" name="password" id="password" placeholder="Password" title="Password min 8 characters. At least one UPPERCASE and one lowercase letter" required pattern="(?=^.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"/> <br>
+                    <input type="text" id="location" placeholder="Location" required><br>
                     <select id="type">
                             <option></option>
                             <option id="rest">rest</option>
                             <option id="org">org</option>
                             <option id="volunteer">Volunteer</option>
                           </select>
+                          <br>
                   
                     <button type="submit" value="Sign Up" title="Submit form" id="signup-btn" class="icon-arrow-right"><span>Sign up</span></button>
-                  </form>   
+                </div>
              
     </div>
             </script>
 
     <script id="org-template" type="text/x-handlebars-template">
-          <h1 id="orgH1">Welcome {{name}} to your database</h1>
-            <div id="org-info">
+        <div id="org-info">
+                <h1 id="orgH1">Welcome {{name}} </h1>
                 <button id="org-to-mainPage">Main Page</button>
                 <form>
-                <table id="org-table" style="width:100%">
+                <table id="org-table" style="width:95%">
                        <tr>
                                <th>Food</th>
                                <th>Amount</th>
@@ -77,7 +75,7 @@
                         <td> {{amount}}</td>
                         <td>{{unit}}</td>
                         <td>{{expirationDate}}</td>
-                        <td><button class="req-input"></button></td>
+                        <td><button class="req-input">Reserve</button></td>
                     </tr>
                     {{/each}}
                         </table>
@@ -86,22 +84,23 @@
         </script>
 
     <script id="rest-template" type="text/x-handlebars-template">
-        <h1>Thank you {{name}} for your contribution!</h1>    
-        <button class="rest-to-mainPage">Main Page</button>
-        <table style="width:100%">
-                <tr>
-                    <th>Food</th>
-                    <th>Amount</th>
-                    <th>Unit</th>
-                    <th>Expiration</th>
-                    <th>Donate</th>
-                </tr>
-        </table>       
         <div id="rest-info"> 
-            <form>
-           <table id="input-table" style="width:100%">
-                <tr>
-                    <td><input class="input" id="food" placeholder="food"></td>
+                <button class="rest-to-mainPage">Return to Main Page</button>
+                <div id="header">
+                    <div> Welcome: {{name}} </div>
+                </div>
+
+                <form>
+                    <table id="input-table" style="width:95%" class="no-spacing" cellspacing="0">
+                            <tr>
+                                <th>Food</th>
+                                <th>Amount</th>
+                                <th>Unit</th>
+                                <th>Expiration</th>
+                                <th>Donate</th>
+                            </tr>
+                            <tr>
+                                <td><input class="input" id="food" placeholder="food"></td>
                     <td><input class="input" id="amount" placeholder="amount"></td>
                     <td><input class="input" id="unit" placeholder="unit"></td>
                     <td><input class="input" id="exp" placeholder="expiration date"></td>
