@@ -9,12 +9,14 @@
 #login-page h1 {
   width: 60%;
   background-color: aliceblue;
-  margin-bottom: 20%;
   margin-left: 20%;
   color: black;
   text-align: center;
   border-radius: 25px ;
   font-size: 54px;
+}
+#login-page ::-webkit-input-placeholder {
+  text-align: center;
 }
 #login-page .login {
   margin-bottom: 30%;
@@ -90,6 +92,18 @@
 #signup-info #signup-box #title {
   font-size: 26px;
   margin: 10px;
+}
+#signup-info #signup-box input {
+  margin-bottom: 15px;
+  border-radius: 15px;
+  height: 30px;
+  width: 70%;
+}
+#signup-info #signup-box ::-webkit-input-placeholder {
+  text-align: center;
+}
+#signup-info #signup-box select {
+  margin-bottom: 15px;
 }
 #rest-info {
   align-items: center;

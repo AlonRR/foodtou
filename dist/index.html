@@ -27,7 +27,8 @@
             <div class="login">
                 <p class="text">User Login</p>
                 <input id="username" placeholder="username">
-                <input type="password" id="password" placeholder="password"> <br>                <button id="loginBtn">Login</button><br>
+                <input type="password" id="password" placeholder="password"> <br>         
+                       <button id="loginBtn">Login</button><br>
                <button id="signup">signup</button>
             </div>
         </div>
@@ -38,19 +39,19 @@
                
 
                   <div id="signup-box">
-                      <span id="title">Sign up</span><br/>
+                      <p id="title">Sign up</p><br/>
                     <input type="text" id="name" placeholder="Name" title="Format: Xx[space]Xx (e.g. Alex Cican)" autofocus autocomplete="off" required pattern="^\w+\s\w+$" /> <br>
                     <input type="password" name="password" id="password" placeholder="Password" title="Password min 8 characters. At least one UPPERCASE and one lowercase letter" required pattern="(?=^.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"/> <br>
                     <input type="text" id="location" placeholder="Location" required><br>
                     <select id="type">
-                            <option></option>
+                            <option>--type--</option>
                             <option id="rest">rest</option>
                             <option id="org">org</option>
                             <option id="volunteer">Volunteer</option>
                           </select>
                           <br>
                   
-                    <button type="submit" value="Sign Up" title="Submit form" id="signup-btn" class="icon-arrow-right"><span>Sign up</span></button>
+                    <button type="submit" value="Sign Up" title="Submit form" id="signup-btn" >Sign up</button>
                 </div>
              
     </div>
@@ -104,11 +105,11 @@
                     <td><input class="input" id="amount" placeholder="amount"></td>
                     <td><input class="input" id="unit" placeholder="unit"></td>
                     <td><input class="input" id="exp" placeholder="expiration date"></td>
-                    <td><button class="input" id="restBtn">Dontate</button></td>
                 </tr>
-             
+                
             </table>
-         </form>
+        </form>
+        <button class="input" id="restBtn">Dontate</button>
         </div>
        </script>
 
