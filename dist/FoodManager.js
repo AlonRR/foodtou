@@ -5,7 +5,7 @@ class FoodManager {
     async login(userName) {
         let data = await $.get(`/site/${userName}`)
         this.userData = data
-        console.log(data)
+        // console.log(data)
         return data
     }
 
@@ -36,9 +36,16 @@ class FoodManager {
             alert(`Your food has been reserved! You can pick it up at ${restName}.`)
         })
     }
-    saveUser(userData){
-        $.post(`/site`,userData,function(err,res){
+    saveUser(userData) {
+        $.post(`/site`, userData, function (err, res) {
             console.log(`${res} ${err}`)
+            if (res === `saved`) {
+                alert(`Saved`)
+                return null
+            } else {
+                console.log(err[0])
+                return err
+            }
         })
     }
 }

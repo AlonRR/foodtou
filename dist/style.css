@@ -1,3 +1,6 @@
+body {
+  margin: 0;
+}
 #login-page {
   align-items: center;
   position: fixed;
@@ -5,6 +8,7 @@
   height: 100%;
   background: url("https://foodrevolution.org/wp-content/uploads/2018/03/blog-featured_healthy_foods-20180306.jpg");
   font-family: 'Playfair Display', serif;
+  font-weight: bold;
 }
 #login-page h1 {
   width: 60%;
@@ -31,8 +35,7 @@
   margin-bottom: 50px;
 }
 #login-page .login .text {
-  grid-row: 1;
-  font-size: 20px;
+  font-size: 25px;
 }
 #login-page .login input {
   grid-row: 2;
@@ -47,15 +50,17 @@
   height: 10%;
   border-radius: 25px;
   margin: 10px;
+  background-color: white;
 }
 #login-page .login #signup {
   grid-row: 4;
   width: 40%;
   height: 10%;
   border-radius: 25px;
-  float: right;
-  margin-top: 13%;
+  margin-top: 5%;
   margin-right: 10px;
+  display: inline-block;
+  background-color: white;
 }
 #login-page #org-info th,
 #login-page #org-info tr,
@@ -76,17 +81,18 @@
   width: 100%;
   height: 100%;
   position: fixed;
-  color: white;
+  color: black;
   display: inline-block;
   text-align: center;
+  overflow: scroll;
 }
 #signup-info #signup-box {
   border: 1px solid black;
   width: 50vw;
-  height: 50vh;
+  height: 60vh;
   margin: 0 auto;
   background-color: rgba(225, 225, 225, 0.479);
-  margin-top: 20%;
+  margin-top: 5%;
   border-radius: 25px;
 }
 #signup-info #signup-box #title {
@@ -104,19 +110,47 @@
 }
 #signup-info #signup-box select {
   margin-bottom: 15px;
+  border-radius: 15px;
+  height: 30px;
+  width: 70%;
+}
+#signup-info #signup-box button {
+  height: 30px;
+  width: 50%;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  background-color: white;
 }
 #rest-info {
+  display: grid;
+  grid-template-rows: 65px 1fr 20% 40px;
+  justify-content: stretch;
   align-items: center;
-  justify-content: center;
   position: fixed;
   width: 100%;
   height: 100%;
   background: url("https://foodrevolution.org/wp-content/uploads/2018/03/blog-featured_healthy_foods-20180306.jpg");
-  font-family: 'Playfair Display', serif;
+  font-family: 'Calligraffitti', cursive;
+}
+#rest-info #header {
+  grid-row: 1;
+  font-weight: bold;
+  font-size: 30px;
+  background-color: rgba(225, 225, 225, 0.479);
+  width: 30%;
+  float: right;
+  margin-left: 5px;
+  margin: 0 auto;
+  border-radius: 20px;
+  text-align: center;
+}
+#rest-info form {
+  grid-row: 2;
+  margin-bottom: 20%;
 }
 #rest-info table {
   border: 1px solid black;
-  background-color: rgba(225, 225, 225, 0.479);
+  background-color: rgba(225, 225, 225, 0.6);
   margin-left: 15px;
 }
 #rest-info table th {
@@ -124,10 +158,35 @@
 }
 #rest-info table td {
   border: 1px solid black;
-  /* Style just to show the table cell boundaries */
+}
+#rest-info table td .input {
+  background-color: transparent;
+  width: -webkit-fill-available;
+  height: auto;
+  line-height: 24px;
+  border: none;
+}
+#rest-info table td ::-webkit-input-placeholder {
+  text-align: center;
+  color: #dfd5d5;
+  font-size: 16px;
 }
 #rest-info table.no-spacing {
   border-spacing: 0;
+}
+#rest-info #restBtn {
+  grid-row: 3;
+  justify-self: center;
+  width: 60px;
+  height: 32px;
+  border-radius: 20px;
+}
+#rest-info .to-mainPage {
+  grid-row: 4;
+  justify-self: center;
+  width: 130px;
+  height: 32px;
+  border-radius: 20px;
 }
 #org-info {
   align-items: center;
