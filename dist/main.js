@@ -47,7 +47,7 @@ $("body").on("click", ".req-input", async function () {
 })
 
 //send data to the food DB and remove row from view
-$(`body`).on("click", '#restBtn', function () {
+$(`body`).on("click", '#restBtn', async function () {
     let foodData = {
         name: $("#food").val(),
         expirationDate: $("#exp").val(),
@@ -56,12 +56,16 @@ $(`body`).on("click", '#restBtn', function () {
         restaurant: foodManager.userData._id,
         organization: true
     }
-    foodManager.inputRestData(foodData)
-    console.log($(`input`).val())
-    localStorage.clear()
+    let check = await foodManager.inputRestData(foodData)
+    if (!check) {
+        alert(`bad!!!`)
+    } else {
+        console.log($(`input`).val())
+        localStorage.clear()
+    }
 })
 
-$(`body`).on(`click`, `#org-to-mainPage, .rest-to-mainPage`, function () {
+$(`body`).on(`click`, `.to-mainPage`, function () {
     localStorage.clear()
     location = location
 })
@@ -80,8 +84,8 @@ $(`body`).on(`click`, `#signup-btn`, async function () {
         food: []
     }
     let check = await foodManager.saveUser(newUser)
-    if (check) {
-        alert(check)
+    if (!check) {
+        alert(`bad`)
     } else {
         renderer.renderLogin()
     }
