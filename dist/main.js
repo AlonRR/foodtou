@@ -11,22 +11,30 @@ const localStorageCheck = function () {
     }
 }
 
+$(`body`).on(`click`, `#loginBtn`, async function () {
+    console.log(`working btn`)
+    let userName = $(`#username`).val()
+    await findAndRender(userName)
+})
 const findAndRender = async function (userName) {
+    let userData = $(`#username`).val()
     let storage = localStorage.getItem(`place`)
     let data = await foodManager.login(userName)
     if (data.type === `org` && foodManager.userData.password === $("#password").val()) {
+        localStorage.setItem(`place`, userData)
         renderer.renderOrg(data)
     } else if (data.type === `rest` && foodManager.userData.password === $("#password").val()) {
+        localStorage.setItem(`place`, userData)
         renderer.renderRest(data)
-    } 
-    // else if (data.type === `rest` && storage) {
-    //     renderer.renderRest(data)
-    // } else if (data.type === `rest` && storage) {
-    //     renderer.renderRest(data)
-    // }
+    }
+    else if (data.type === 'org' && storage) {
+        renderer.renderOrg(data)
+    } else if (data.type === `rest` && storage) {
+        renderer.renderRest(data)
+    }
     else {
         localStorage.clear()
-        location = location
+        // location = location
         alert('your username/password is incorrect, please try agaain')
     }
 }
@@ -53,12 +61,6 @@ $(`body`).on("click", '#restBtn', function () {
     localStorage.clear()
 })
 
-$(`body`).on(`click`, `#loginBtn`, async function () {
-    console.log(`working btn`)
-    let userName = $(`#username`).val()
-    localStorage.setItem(`place`, userName)
-    findAndRender(userName)
-})
 $(`body`).on(`click`, `#org-to-mainPage, .rest-to-mainPage`, function () {
     localStorage.clear()
     location = location
