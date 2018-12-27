@@ -36,9 +36,15 @@ class FoodManager {
             alert(`Your food has been reserved! You can pick it up at ${restName}.`)
         })
     }
-    saveUser(userData){
-        $.post(`/site`,userData,function(err,res){
+    async saveUser(userData){
+        await $.post(`/site`,userData,function(err,res){
             console.log(`${res} ${err}`)
+            if(res===`saved`){
+                alert(`Saved`)
+            } else{
+                console.log(err[0])
+                return err
+            }
         })
     }
 }

@@ -70,7 +70,7 @@ $(`body`).on(`click`, `#signup`, function () {
 })
 
 localStorageCheck()
-$(`body`).on(`click`, `#signup-btn`, function () {
+$(`body`).on(`click`, `#signup-btn`, async function () {
     let newUser = {
         name: $(`#name`).val(),
         password: $(`#password`).val(),
@@ -79,7 +79,12 @@ $(`body`).on(`click`, `#signup-btn`, function () {
         boolean: true,
         food: []
     }
-    foodManager.saveUser(newUser)
+    let check = await foodManager.saveUser(newUser)
+    if (check) {
+        alert(check)
+    } else {
+        renderer.renderLogin()
+    }
 })
 
 //signup-btn
