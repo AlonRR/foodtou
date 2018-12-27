@@ -4,13 +4,13 @@
 #login-page{
     align-items: center;
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: 
-    "h h h h h h"
-    "i i . . . s"
-    "i i . l l l"
-    "i i . l l l"
-    ;
+    grid-template-rows: 1fr 1fr ;
+    // grid-template-areas: 
+    // "h h h h h h"
+    // "i i . . . s"
+    // "i i . l l l"
+    // "i i . l l l"
+    // ;
     position: fixed;
     grid-row-gap: 5px;
     width: 100%;
@@ -22,21 +22,23 @@
     font-family: 'Playfair Display', serif;
 
     h1{
-        grid-area: h;
+        // grid-area: h;
+        grid-row: 1;
         color: black;
         text-align: center;   
         border-radius: 25px ;    
         font-size: 54px; 
     };
     .login{
-        grid-area: l;
+        // grid-area: l;
+        grid-row:2;
         margin-bottom: 10px;
         margin-right: 100px;
-        width: 40vw;
-        height: 45vh;
+        width: 400px;
+        height: 400px;
         text-align: center;
         border-radius: 20px;
-        background-color: rgba(151, 151, 151, 0.4); 
+        background: rgba(225, 225, 225, 0.479);
 
         input{
             width: 70%;
@@ -49,41 +51,42 @@
             border-radius: 40%;
         }
     }
-    #sign-up{
-        grid-area: s;
-    };
-    #about-us{
-        // grid-area: i;
-        // margin-left: 5px;
-        // border-radius: 50%;
-        // // word-wrap: break-word;
-        // // overflow-wrap: break-word;
-        // width: 300px;
-        // height:300px;
-        // overflow:auto;
-        // //  text-align: center;
-        //  position:relative;
+    // #sign-up{
+    //     grid-area: s;
+    // };
+    // #about-us{
+    //     // grid-area: i;
+    //     // margin-left: 5px;
+    //     // border-radius: 50%;
+    //     // // word-wrap: break-word;
+    //     // // overflow-wrap: break-word;
+    //     // width: 300px;
+    //     // height:300px;
+    //     // overflow:auto;
+    //     // //  text-align: center;
+    //     //  position:relative;
 
-        //     width: 30vw;
-        //     height: 30vh;
-        //     position: absolute;
-        //     margin-top: 20%;
-        //     margin-right: 20%;
-        //     margin-left: 20%;
-        //     color:white;
-        //     font-weight: bold;
-        //      margin-right: 60px;
-        //      border-radius: 50%;
-             border: 1.5px solid #000000;
-   background-color: #ED8713;
-    height: 150px;
-    width: 150px;
-    margin: 10px;
-    // margin-top: 50px;
-    text-align: center
+    //     //     width: 30vw;
+    //     //     height: 30vh;
+    //     //     position: absolute;
+    //     //     margin-top: 20%;
+    //     //     margin-right: 20%;
+    //     //     margin-left: 20%;
+    //     //     color:white;
+    //     //     font-weight: bold;
+    //     //      margin-right: 60px;
+    //         //  border-radius: 50%;
+    //          border: 1.5px solid #000000;
+    //          background: rgba(225, 225, 225, 0.479);
+
+    //          height: 200px;
+    //     width: 200px;
+    //     margin: 10px;
+    // // margin-top: 50px;
+    //      text-align: center
 
          
-        }
+    //     }
         
 //ORGANIZATION PAGE 
 

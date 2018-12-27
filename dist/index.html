@@ -18,17 +18,18 @@
     <script id="login-template" type="text/x-handlebars-template">
         <div id="login-page">
             <h1>Feed the Need</h1>
-            <div id="about-us">
+            <!-- <div id="about-us">
                    <span> Thank you for visiting our page. This initiative aims at ending food waste across the world
                     and re-distributing it to those in need.
                     <span>
-            </div>
+            </div> -->
 
             <div class="login">
                 <p>User Login</p>
-                <input id="username" placeholder="username"> <br>
-                <button id="loginBtn">Login</button>
-                <button id="signup">signup</button>
+                <input id="username" placeholder="username">
+                <input type="password" id="password" placeholder="password"> <br>
+                <button id="loginBtn">Login</button><br>
+               <span>Sign up:</span> <button id="signup">signup</button>
             </div>
         </div>
     </script>
@@ -49,8 +50,8 @@
                     <input type="text" id="location" placeholder="Location" required>
                     <select id="type">
                             <option></option>
-                            <option id="rest">Restaurant</option>
-                            <option id="org">Organization</option>
+                            <option id="rest">rest</option>
+                            <option id="org">org</option>
                             <option id="volunteer">Volunteer</option>
                           </select>
                   
@@ -59,6 +60,7 @@
              
     </div>
             </script>
+
     <script id="org-template" type="text/x-handlebars-template">
           <h1 id="orgH1">Welcome {{name}} to your database</h1>
             <div id="org-info">

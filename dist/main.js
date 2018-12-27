@@ -13,17 +13,20 @@ const localStorageCheck = function () {
 
 const findAndRender = async function (userName) {
     let data = await foodManager.login(userName)
-    if (data.type === `org`) {
+    if (data.type === `org` && foodManager.userData.password === $("#password").val()) {
         renderer.renderOrg(data)
-    } else if (data.type === `rest`) {
+    } else if (data.type === `rest` && foodManager.userData.password === $("#password").val()) {
         renderer.renderRest(data)
+    }
+    else {
+        alert('your username/password is incorrect, please try agaain')
     }
 }
 
 // remove food from table and update boolean to false
 $("body").on("click", ".req-input", async function () {
-    await foodManager.updateFoodRest($("#name").attr('data-id'))
-    await foodManager.updateFood($("#name").attr('data-id'))
+    await foodManager.updateFoodRest($(this).closest("#tableRow").find("#name").data().id)
+    await foodManager.updateFood($(this).closest("#tableRow").find("#name").data().id)
     $(this).closest("#tableRow").remove()
 })
 
@@ -56,14 +59,14 @@ $(`body`).on(`click`, `#signup`, function () {
 })
 
 localStorageCheck()
-$(`body`).on(`click`,`#signup-btn`,function(){
-    let newUser= {
-        name:$(`#name`).val(),
-        password:$(`#password`).val(),
-        location:$(`#location`).val(),
-        type:$(`#type`).val(),
-        boolean:true,
-        food:[]
+$(`body`).on(`click`, `#signup-btn`, function () {
+    let newUser = {
+        name: $(`#name`).val(),
+        password: $(`#password`).val(),
+        location: $(`#location`).val(),
+        type: $(`#type`).val(),
+        boolean: true,
+        food: []
     }
     foodManager.saveUser(newUser)
 })
