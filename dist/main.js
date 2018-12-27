@@ -56,11 +56,11 @@ $(`body`).on("click", '#restBtn', async function () {
         restaurant: foodManager.userData._id,
         organization: true
     }
-    let check = await foodManager.inputRestData(foodData)
-    if (!check) {
+    if (!(foodData.name && foodData.expirationDate && foodData.amount && foodData.unit)) {
         alert(`bad!!!`)
+        return
     } else {
-        console.log($(`input`).val())
+        foodManager.inputRestData(foodData)
         localStorage.clear()
     }
 })
@@ -74,6 +74,7 @@ $(`body`).on(`click`, `#signup`, function () {
 })
 
 localStorageCheck()
+
 $(`body`).on(`click`, `#signup-btn`, async function () {
     let newUser = {
         name: $(`#name`).val(),
@@ -83,13 +84,15 @@ $(`body`).on(`click`, `#signup-btn`, async function () {
         boolean: true,
         food: []
     }
-    let check = await foodManager.saveUser(newUser)
-    if (!check) {
+    if (!(newUser.name && newUser.password && newUser.location && newUser.type)) {
         alert(`bad`)
+        return
     } else {
+        foodManager.saveUser(newUser)
         renderer.renderLogin()
     }
-})
+}
+)
 
 //signup-btn
 
