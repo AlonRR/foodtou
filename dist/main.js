@@ -12,7 +12,7 @@ const localStorageCheck = function () {
 }
 
 $(`body`).on(`click`, `#loginBtn`, async function () {
-    console.log(`working btn`)
+    // console.log(`working btn`)
     let userName = $(`#username`).val()
     await findAndRender(userName)
 })
@@ -56,12 +56,12 @@ $(`body`).on("click", '#restBtn', async function () {
         restaurant: foodManager.userData._id,
         organization: true
     }
-    let check = await foodManager.inputRestData(foodData)
-    if (!check) {
-        alert(`Please fill all data fields`)
+    if (!(foodData.name && foodData.expirationDate && foodData.amount && foodData.unit)) {
+        alert(`Please fill all fields`)
+        return
     } else {
-        console.log($(`input`).val())
-        localStorage.clear()
+        foodManager.inputRestData(foodData)
+        location = location
     }
 })
 
@@ -74,6 +74,7 @@ $(`body`).on(`click`, `#signup`, function () {
 })
 
 localStorageCheck()
+
 $(`body`).on(`click`, `#signup-btn`, async function () {
     let newUser = {
         name: $(`#name`).val(),
@@ -83,13 +84,15 @@ $(`body`).on(`click`, `#signup-btn`, async function () {
         boolean: true,
         food: []
     }
-    let check = await foodManager.saveUser(newUser)
-    if (!check) {
-        alert(`Please fill all data fields`)
+    if (!(newUser.name && newUser.password && newUser.location && newUser.type)) {
+        alert(`Please fill all fields`)
+        return
     } else {
+        foodManager.saveUser(newUser)
         renderer.renderLogin()
     }
-})
+}
+)
 
 //signup-btn
 
