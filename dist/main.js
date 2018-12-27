@@ -89,6 +89,7 @@ $(`body`).on(`click`, `#signup-btn`, async function () {
         return
     } else {
         foodManager.saveUser(newUser)
+        alert('your are now signed up')
         renderer.renderLogin()
     }
 }

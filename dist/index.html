@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Calligraffitti" rel="stylesheet">
 </head>
 
 <body>
@@ -27,9 +28,9 @@
             <div class="login">
                 <p class="text">User Login</p>
                 <input id="username" placeholder="username">
-                <input type="password" id="password" placeholder="password"> <br>         
+                <input type="password" id="password" placeholder="password" required> <br>         
                        <button id="loginBtn">Login</button><br>
-               <button id="signup">signup</button>
+               <button id="signup">Sign Up</button>
             </div>
         </div>
     </script>
@@ -47,11 +48,13 @@
                             <option>--type--</option>
                             <option id="rest">rest</option>
                             <option id="org">org</option>
-                            <option id="volunteer">Volunteer</option>
+                            <!-- <option id="volunteer">Volunteer</option> -->
                           </select>
                           <br>
                   
                     <button type="submit" value="Sign Up" title="Submit form" id="signup-btn" >Sign up</button>
+                    <button class="to-mainPage">Main Page</button>
+
                 </div>
              
     </div>
@@ -60,7 +63,7 @@
     <script id="org-template" type="text/x-handlebars-template">
         <div id="org-info">
                 <h1 id="orgH1">Welcome {{name}} </h1>
-                <button id="org-to-mainPage">Main Page</button>
+                <button class="to-mainPage">Not {{name}}? Log out</button>
                 <form>
                 <table id="org-table" style="width:95%">
                        <tr>
@@ -86,11 +89,10 @@
 
     <script id="rest-template" type="text/x-handlebars-template">
         <div id="rest-info"> 
-                <button class="rest-to-mainPage">Return to Main Page</button>
+                <button class="to-mainPage">Not {{name}}? Log out</button>
                 <div id="header">
                     <div> Welcome: {{name}} </div>
                 </div>
-
                 <form>
                     <table id="input-table" style="width:95%" class="no-spacing" cellspacing="0">
                             <tr>
@@ -98,12 +100,16 @@
                                 <th>Amount</th>
                                 <th>Unit</th>
                                 <th>Expiration</th>
-                                <th>Donate</th>
                             </tr>
                             <tr>
-                                <td><input class="input" id="food" placeholder="food"></td>
+                    <td><input class="input" id="food" placeholder="food"></td>
                     <td><input class="input" id="amount" placeholder="amount"></td>
-                    <td><input class="input" id="unit" placeholder="unit"></td>
+                    <td> <select id="unit">
+                            <option>--unit--</option>
+                            <option id="kg">kg</option>
+                            <option id="grams">g</option>
+                            <option id="liter">L</option>
+                          </select></td>
                     <td><input class="input" id="exp" placeholder="expiration date"></td>
                 </tr>
                 
