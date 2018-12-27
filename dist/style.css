@@ -1,7 +1,7 @@
 #login-page {
   align-items: center;
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr ;
   position: fixed;
   grid-row-gap: 5px;
   width: 100%;
@@ -12,22 +12,21 @@
   font-family: 'Playfair Display', serif;
 }
 #login-page h1 {
-  grid-area: h;
-  color: #fab1a0;
+  grid-row: 1;
+  color: black;
   text-align: center;
   border-radius: 25px ;
   font-size: 54px;
 }
 #login-page .login {
-  grid-area: l;
+  grid-row: 2;
   margin-bottom: 10px;
   margin-right: 100px;
-  width: 40vw;
-  height: 45vh;
+  width: 400px;
+  height: 400px;
   text-align: center;
   border-radius: 20px;
-  background-color: rgba(151, 151, 151, 0.4);
-  /* Black w/opacity/see-through */
+  background: rgba(225, 225, 225, 0.479);
 }
 #login-page .login input {
   width: 70%;
@@ -38,16 +37,6 @@
   width: 40%;
   height: 10%;
   border-radius: 40%;
-}
-#login-page #info-text {
-  width: 200px;
-  height: 200px;
-  position: absolute;
-  margin-top: 20%;
-  margin-right: 20%;
-  margin-left: 20%;
-  color: white;
-  font-weight: bold;
 }
 #login-page #orgH1 {
   color: aqua;
@@ -75,24 +64,22 @@
   border-collapse: collapse;
   display: inline-block;
 }
-#login-page #rest-info table .input,
-#login-page #rest-info th .input,
-#login-page #rest-info tr .input {
+#login-page #rest-info .input {
   width: 100%;
   box-sizing: border-box;
 }
-#login-page #signup-table th,
-#login-page #signup-table tr,
-#login-page #signup-table td {
+#signup-table th,
+#signup-table tr,
+#signup-table td {
   border: 2px solid black;
   border-collapse: collapse;
   border-spacing: 0;
 }
-#login-page #signup-table .input {
+#signup-table .input {
   width: 100%;
   box-sizing: border-box;
 }
-#login-page #signup-table th {
+#signup-table th {
   width: 10%;
 }
 #signup-info {
