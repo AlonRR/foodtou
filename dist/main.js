@@ -12,13 +12,21 @@ const localStorageCheck = function () {
 }
 
 const findAndRender = async function (userName) {
+    let storage = localStorage.getItem(`place`)
     let data = await foodManager.login(userName)
     if (data.type === `org` && foodManager.userData.password === $("#password").val()) {
         renderer.renderOrg(data)
     } else if (data.type === `rest` && foodManager.userData.password === $("#password").val()) {
         renderer.renderRest(data)
-    }
+    } 
+    // else if (data.type === `rest` && storage) {
+    //     renderer.renderRest(data)
+    // } else if (data.type === `rest` && storage) {
+    //     renderer.renderRest(data)
+    // }
     else {
+        localStorage.clear()
+        location = location
         alert('your username/password is incorrect, please try agaain')
     }
 }
@@ -42,6 +50,7 @@ $(`body`).on("click", '#restBtn', function () {
     }
     foodManager.inputRestData(foodData)
     console.log($(`input`).val())
+    localStorage.clear()
 })
 
 $(`body`).on(`click`, `#loginBtn`, async function () {
