@@ -21,7 +21,7 @@ const findAndRender = async function (userName) {
 }
 
 // remove food from table and update boolean to false
-$("body").on("click", ".req-input", function () {
+$("body").on("click", ".req-input", async function () {
     await foodManager.updateFoodRest($("#name").attr('data-id'))
     await foodManager.updateFood($("#name").attr('data-id'))
     $(this).closest("#tableRow").remove()
@@ -67,6 +67,6 @@ $(`body`).on(`click`,`#signup-btn`,function(){
     }
     foodManager.saveUser(newUser)
 })
-localStorageCheck()
+
 //signup-btn
 
