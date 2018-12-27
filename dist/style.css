@@ -119,20 +119,19 @@ body {
 }
 #rest-info {
   display: grid;
-  grid-row-gap: 10px;
-  grid-template-rows: 150px 1fr 20% 40px;
+  grid-template-rows: 65px 1fr 20% 40px;
   justify-content: stretch;
   align-items: center;
   position: fixed;
   width: 100%;
   height: 100%;
   background: url("https://foodrevolution.org/wp-content/uploads/2018/03/blog-featured_healthy_foods-20180306.jpg");
-  font-family: 'Playfair Display', serif;
+  font-family: 'Calligraffitti', cursive;
 }
 #rest-info #header {
   grid-row: 1;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 30px;
   background-color: rgba(225, 225, 225, 0.479);
   width: 30%;
   float: right;
@@ -143,6 +142,7 @@ body {
 }
 #rest-info form {
   grid-row: 2;
+  margin-bottom: 20%;
 }
 #rest-info table {
   border: 1px solid black;

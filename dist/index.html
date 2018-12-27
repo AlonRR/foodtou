@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Calligraffitti" rel="stylesheet">
 </head>
 
 <body>
@@ -62,7 +63,7 @@
     <script id="org-template" type="text/x-handlebars-template">
         <div id="org-info">
                 <h1 id="orgH1">Welcome {{name}} </h1>
-                <button id="-to-mainPage">Main Page</button>
+                <button id="-to-mainPage">Not {{name}}? Log out</button>
                 <form>
                 <table id="org-table" style="width:95%">
                        <tr>
@@ -88,7 +89,7 @@
 
     <script id="rest-template" type="text/x-handlebars-template">
         <div id="rest-info"> 
-                <button class="to-mainPage">Return to Main Page</button>
+                <button class="to-mainPage">Not {{name}}? Log out</button>
                 <div id="header">
                     <div> Welcome: {{name}} </div>
                 </div>
