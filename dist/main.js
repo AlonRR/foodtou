@@ -13,10 +13,13 @@ const localStorageCheck = function () {
 
 const findAndRender = async function (userName) {
     let data = await foodManager.login(userName)
-    if (data.type === `org`) {
+    if (data.type === `org` && foodManager.userData.password === $("#password").val()) {
         renderer.renderOrg(data)
-    } else if (data.type === `rest`) {
+    } else if (data.type === `rest` && foodManager.userData.password === $("#password").val()) {
         renderer.renderRest(data)
+    }
+    else {
+        alert('your username/password is incorrect, please try agaain')
     }
 }
 
@@ -67,6 +70,6 @@ $(`body`).on(`click`, `#signup-btn`, function () {
     }
     foodManager.saveUser(newUser)
 })
-localStorageCheck()
+
 //signup-btn
 
