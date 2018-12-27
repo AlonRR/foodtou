@@ -10,6 +10,9 @@ class FoodManager {
     }
 
     inputRestData(food) {
+        if(!(food.name && food.expirationDate && food.amount && food.unit)){
+            return false
+        }
         $.post(`/food`, food, (res) => {
             if (res) {
                 alert(`Saved`)
@@ -36,12 +39,15 @@ class FoodManager {
             alert(`Your food has been reserved! You can pick it up at ${restName}.`)
         })
     }
-    async saveUser(userData){
-        await $.post(`/site`,userData,function(err,res){
+    saveUser(userData) {
+        if (!(userData.Name && userData.password && userData.location && userData.type)) {
+            return false
+        }
+        $.post(`/site`, userData, function (err, res) {
             console.log(`${res} ${err}`)
-            if(res===`saved`){
+            if (res === `saved`) {
                 alert(`Saved`)
-            } else{
+            } else {
                 console.log(err[0])
                 return err
             }
